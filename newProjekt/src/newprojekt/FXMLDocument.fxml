@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="756.0" style="-fx-background-color: #dcdde1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newprojekt.FXMLDocumentController">
+   <children>
+      <AnchorPane layoutY="-7.0" prefHeight="602.0" prefWidth="164.0" style="-fx-background-radius: 0 60 0 60; -fx-background-color: #303952;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="592.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ChoiceBox disable="true" layoutX="15.0" layoutY="44.0" prefHeight="28.0" prefWidth="120.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #596275;" />
+            <VBox layoutX="22.0" layoutY="148.0" prefHeight="246.0" prefWidth="142.0" spacing="10.0" style="-fx-background-color: #596275; -fx-background-radius: 0 10 10 0;">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="136.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #833471;" text="Anasayfa" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="134.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #833471;" text="Projeler" />
+                  <Button mnemonicParsing="false" onMouseClicked="#show_calisanlar" prefHeight="32.0" prefWidth="134.0" style="-fx-background-color: #833471; -fx-background-radius: 40 40 40 40;" text="Çalışanlar" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="132.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #833471;" text="Müşteriler" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="128.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #833471;" text="Ekipman Bilgileri" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="129.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #833471;" text="Raporlar" />
+               </children>
+            </VBox>
+            <VBox layoutY="148.0" prefHeight="246.0" prefWidth="22.0" style="-fx-background-color: #596275; -fx-background-radius: 10 0 0 10;" />
+            <HBox layoutX="119.0" layoutY="120.0" prefHeight="28.0" prefWidth="29.0" />
+            <TextField layoutX="1.0" layoutY="109.0" prefHeight="26.0" prefWidth="142.0" promptText="Search" style="-fx-background-color: #596275;" />
+         </children>
+      </AnchorPane>
+      <BorderPane fx:id="border_pane" disable="true" layoutX="163.0" layoutY="-7.0" prefHeight="594.0" prefWidth="593.0" style="-fx-background-color: #dcdde1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
