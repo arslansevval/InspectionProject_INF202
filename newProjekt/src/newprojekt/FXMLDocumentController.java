@@ -36,9 +36,15 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void show_calisanlar(MouseEvent event) throws IOException {
-        Parent çalışanlar = FXMLLoader.load(getClass().getResource("/newprojekt/çalışanlar.fxml"));
+        Parent çalışanlar = FXMLLoader.load(getClass().getResource("/newprojekt/Calisanlar.fxml"));
         border_pane.setCenter(çalışanlar);
         System.out.println("bu fonksiyona giriyor");
+    }
+
+    @FXML
+    private void show_raporlar(MouseEvent event) throws IOException {
+        Parent raporlar = FXMLLoader.load(getClass().getResource("/newprojekt/raporlar.fxml"));
+        border_pane.setCenter(raporlar);
     }
 
    

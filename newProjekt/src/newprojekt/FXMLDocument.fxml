@@ -20,7 +20,7 @@
                   <Button mnemonicParsing="false" onMouseClicked="#show_calisanlar" prefHeight="32.0" prefWidth="134.0" style="-fx-background-color: #833471; -fx-background-radius: 40 40 40 40;" text="Çalışanlar" />
                   <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="132.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #833471;" text="Müşteriler" />
                   <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="128.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #833471;" text="Ekipman Bilgileri" />
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="129.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #833471;" text="Raporlar" />
+                  <Button mnemonicParsing="false" onMouseClicked="#show_raporlar" prefHeight="32.0" prefWidth="129.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #833471;" text="Raporlar" />
                </children>
             </VBox>
             <VBox layoutY="148.0" prefHeight="246.0" prefWidth="22.0" style="-fx-background-color: #596275; -fx-background-radius: 10 0 0 10;" />
