@@ -1,22 +1,977 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="594.0" prefWidth="592.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newprojekt.RaporlarController">
+<AnchorPane prefHeight="1558.0" prefWidth="756.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newprojekt.RaporlarController">
    <children>
-      <ScrollPane prefHeight="594.0" prefWidth="592.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="589.0" prefWidth="588.0">
+      <ScrollPane layoutX="78.0" prefHeight="1508.0" prefWidth="678.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1506.0" prefWidth="655.0" style="-fx-border-color: #000000; -fx-background-color: #ffffff;">
                <children>
-                  <HBox prefHeight="98.0" prefWidth="588.0" style="-fx-border-color: #000000;" />
-                  <HBox layoutY="98.0" prefHeight="163.0" prefWidth="588.0" style="-fx-border-color: #000000;" />
-                  <HBox layoutY="261.0" prefHeight="34.0" prefWidth="588.0" style="-fx-border-color: #000000;" />
-                  <HBox layoutY="295.0" prefHeight="143.0" prefWidth="588.0" style="-fx-border-color: #000000;" />
+                  <HBox layoutX="1.0" prefHeight="98.0" prefWidth="653.0" style="-fx-border-color: #000000; -fx-background-color: #ffffff;">
+                     <children>
+                        <HBox prefHeight="96.0" prefWidth="202.0" style="-fx-border-color: #000000; -fx-background-color: #ffffff;" />
+                        <VBox prefHeight="96.0" prefWidth="493.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <HBox prefHeight="47.0" prefWidth="483.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="GÖZETİM MUAYENE VE EĞİTİM HİZMETLERİ" textAlignment="CENTER" wrappingWidth="409.13671875">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="60.0" prefWidth="441.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="MANYETİK PARÇACIK MUAYENE RAPORU" textAlignment="CENTER" wrappingWidth="449.13671875">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="MAGNETIC PARTICLE INSPECTION REPORT" textAlignment="CENTER" wrappingWidth="430.13671875">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="1.0" layoutY="98.0" prefHeight="192.0" prefWidth="653.0" style="-fx-border-color: #000000; -fx-background-color: #ffffff;">
+                     <children>
+                        <VBox prefHeight="190.0" prefWidth="134.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Müşteri " />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer " />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Proje Adı " />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name " />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Test Yeri" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Place " />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Standardı " />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Standart" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="45.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Değerlen. Standardı" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Evaluation Standart" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="190.0" prefWidth="134.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField alignment="CENTER" style="-fx-background-color: #dcdde1;" text="TS EN ISO 17638" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="45.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField alignment="CENTER" text="TS EN ISO 23278 Class B" />
+                                 </children></VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="145.0" layoutY="11.0" prefHeight="190.0" prefWidth="134.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Prosedürü" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Procedure" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Kapsamı " />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Scope " />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Resim No" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drawing No " />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yüzey Durumu " />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surface Condition" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="45.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Aşaması" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stage Of Examination" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="279.0" layoutY="11.0" prefHeight="190.0" prefWidth="134.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField alignment="CENTER" text="P-101-004" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField alignment="CENTER" text="-">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="45.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="413.0" layoutY="11.0" prefHeight="190.0" prefWidth="134.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sayfa No" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rapor No" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Report No" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rapor Tarihi " />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Date" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" İş Emri No " />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Order No" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="45.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Teklif No " />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Offer No" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="503.0" layoutY="11.0" prefHeight="190.0" prefWidth="134.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField alignment="CENTER" text="1" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="45.0" prefHeight="40.0" prefWidth="132.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="1.0" layoutY="290.0" prefHeight="30.0" prefWidth="653.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ekipman Bilgileri/ Equipment Informations" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="1.0" layoutY="320.0" prefHeight="218.0" prefWidth="653.0" style="-fx-border-color: #000000; -fx-background-color: #ffffff;">
+                     <children>
+                        <VBox prefHeight="144.0" prefWidth="114.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kutup Mesafesi,mm" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pole Distance" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cihaz" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipment" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MP Taşıyıcı Ortam" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MP Carrier Medium" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="22.0" prefWidth="83.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mıknatıslama Tekniği" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mag.Tech." />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UV Işık Şiddeti" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UV Light Intensity" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Işık mesafesi" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Distance of Light" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="146.0" prefWidth="147.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="215.0" layoutY="11.0" prefHeight="146.0" prefWidth="143.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Bölgesi " />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Examination Area" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Akım Tipi" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current Type" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Luxmetre/Işık Şiddeti" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Luxmeter" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Ortamı" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Test Medium" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mıknatıs Giderimi" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Demagnetization" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Isıl İşlem" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Heat Treatment" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="419.0" layoutY="11.0" prefHeight="146.0" prefWidth="148.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField text="KAYNAK+HAZ" />
+                                 </children></VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField text="1200 Lux" />
+                                 </children></VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="473.0" layoutY="11.0" prefHeight="216.0" prefWidth="151.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="36.0" prefWidth="196.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yüzey Sıcaklığı (ºC" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surface Temperature" wrappingWidth="112.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="71.0" prefWidth="199.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Bölgesindeki  Alan Şiddeti, kA/" wrappingWidth="121.65234375">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gauss Field Strength" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yüzey" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surface Condition" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Işık Cihazı Tanımı" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Identification of Light Equip." />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="114.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaldırma Testi Tarih / No" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lifting Test Date / Number" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="416.0" layoutY="11.0" prefHeight="146.0" prefWidth="115.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="73.0" prefWidth="65.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField alignment="CENTER" text="3.2 kA/m" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding></VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField text="TAŞLANMIŞ / GRINDING" />
+                                 </children></VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="1.0" layoutY="537.0" prefHeight="151.0" prefWidth="653.0" style="-fx-border-color: #000000; -fx-background-color: #ffffff;">
+                     <children>
+                        <VBox prefHeight="135.0" prefWidth="175.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <ImageView fitHeight="115.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/icon/alınkaynagı.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="0.0" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="135.0" prefWidth="208.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <ImageView fitHeight="116.0" fitWidth="234.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/icon/kosekaynagı.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ImageView>
+                              <CheckBox mnemonicParsing="false" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="137.0" layoutY="11.0" prefHeight="135.0" prefWidth="291.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <HBox prefHeight="35.0" prefWidth="361.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Süreksizliğin Yeri / Location of Discontinuity" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="120.0" prefWidth="361.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <VBox prefHeight="118.0" prefWidth="95.0" style="-fx-border-color: #000000;">
+                                       <children>
+                                          <HBox prefHeight="36.0" prefWidth="93.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BM" />
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="11.0" layoutY="11.0" prefHeight="36.0" prefWidth="93.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HAZ" />
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="11.0" layoutY="11.0" prefHeight="36.0" prefWidth="93.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="W" />
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="11.0" layoutY="11.0" prefHeight="36.0" prefWidth="93.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="B" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="11.0" layoutY="11.0" prefHeight="118.0" prefWidth="264.0" style="-fx-border-color: #000000;">
+                                       <children>
+                                          <HBox prefHeight="36.0" prefWidth="93.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ana Metal / Base Metal" />
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="11.0" layoutY="11.0" prefHeight="36.0" prefWidth="93.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Isıdan etkilenen bölge / Heat afffected zone" />
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="11.0" layoutY="11.0" prefHeight="36.0" prefWidth="93.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaynak / Weld" />
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="11.0" layoutY="11.0" prefHeight="36.0" prefWidth="93.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaynak ağzı / Bevel " />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="1.0" layoutY="688.0" prefHeight="107.0" prefWidth="653.0" style="-fx-border-color: #000000; -fx-background-color: #ffffff;">
+                     <children>
+                        <VBox prefHeight="125.0" prefWidth="260.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="55.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Standarttan Sapmalar" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Standard Deviations" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="55.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Tarihleri" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Dates" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="55.0" prefWidth="98.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Açıklamalar ve Ekler" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description and Attachments" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="125.0" prefWidth="522.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="55.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField text="Standarttan sapma yoktur." />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="55.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="55.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="1.0" layoutY="794.0" prefHeight="30.0" prefWidth="653.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Sonuçları / Inspection Results" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="1.0" layoutY="824.0" prefHeight="469.0" prefWidth="654.0" style="-fx-border-color: #000000; -fx-background-color: #ffffff;">
+                     <children>
+                        <VBox prefHeight="392.0" prefWidth="64.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="45.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seri No" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Serial No" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="147.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="181.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="6" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="215.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="249.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="8" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="283.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="292.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="295.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="297.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="299.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="301.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14" />
+                                 </children></VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="315.0" prefWidth="137.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="118.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaynak/ Parça No" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weld/ Piece No" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="147.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="181.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="215.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="249.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="283.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="292.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="295.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="297.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="299.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="301.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="52.0" layoutY="11.0" prefHeight="315.0" prefWidth="82.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="63.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kontrol Uzun." />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test Lenght" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="147.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="181.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="215.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="249.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="283.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="292.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="295.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="297.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="299.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="301.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="189.0" layoutY="11.0" prefHeight="315.0" prefWidth="123.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="104.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaynak Yön." />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welding Process" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="147.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="181.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="215.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="249.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="283.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="292.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="295.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="297.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="299.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="301.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="271.0" layoutY="11.0" prefHeight="315.0" prefWidth="61.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="42.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kalınlık (mm)" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thickness" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="147.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="181.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="215.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="249.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="283.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="292.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="295.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="297.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="299.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="301.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="394.0" layoutY="11.0" prefHeight="315.0" prefWidth="75.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="56.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Çap (mm)" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diameter" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="147.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="181.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="215.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="249.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="283.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="292.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="295.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="297.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="299.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="301.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="455.0" layoutY="11.0" prefHeight="315.0" prefWidth="80.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="61.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hata Tipi" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Defect Type" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="147.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="181.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="215.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="249.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="283.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="292.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="295.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="297.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="299.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="301.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="516.0" layoutY="11.0" prefHeight="315.0" prefWidth="96.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="77.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hatanın Yeri" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Defect Loc." />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <TextField />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="147.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="181.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="215.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="249.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="283.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="292.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="295.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="297.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="299.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="301.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="540.0" layoutY="11.0" prefHeight="315.0" prefWidth="51.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="40.0" prefWidth="32.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sonuç" />
+                                    <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children></VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="147.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="181.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="215.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="249.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="283.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="292.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="295.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="297.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="299.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="301.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="1.0" layoutY="1292.0" prefHeight="194.0" prefWidth="625.0" style="-fx-border-color: #000000; -fx-background-color: #ffffff;">
+                     <children>
+                        <VBox prefHeight="235.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="35.0" prefWidth="95.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Personel Bilgileri/ Person. Infor. " />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="95.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adı Soyadı / Name Surname " />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="95.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seviye / Level" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="95.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tarih / Date" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="68.0" prefWidth="95.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="İmza / Signature" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="235.0" prefWidth="151.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Operatör/ Operator" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="36.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="67.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="111.0" layoutY="11.0" prefHeight="153.0" prefWidth="149.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Değerlendiren/ Evaluated by" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="68.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="262.0" layoutY="11.0" prefHeight="235.0" prefWidth="114.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Onay/ Confirmation " />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="69.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="413.0" layoutY="11.0" prefHeight="204.0" prefWidth="111.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <VBox prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000; -fx-background-color: #ffcccc;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Müşteri/ Customer" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="81.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+                              <VBox layoutX="11.0" layoutY="116.0" prefHeight="68.0" prefWidth="107.0" style="-fx-border-color: #000000;" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
-        </content>
+         </content>
       </ScrollPane>
+      <AnchorPane layoutY="148.0" prefHeight="246.0" prefWidth="72.0" style="-fx-background-color: #596275; -fx-background-radius: 0 60 0 0;" />
+      <AnchorPane layoutY="394.0" prefHeight="1112.0" prefWidth="72.0" style="-fx-background-color: #303952; -fx-background-radius: 0 0 60 0;" />
    </children>
 </AnchorPane>
