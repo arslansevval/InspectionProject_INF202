@@ -5,44 +5,55 @@ import java.sql.*;
 
 public class database {
 
-        public static Connection getConnection() throws SQLException{
-        Connection myConn = null;
-        Statement myStmt = null;
-        ResultSet myRs = null;
+        private static final String dburl = "jdbc:mysql://localhost:3306/deneme?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Turkey";
+	private static final String username = "root"; // my  username is ken
+	private static final String password = "1521698"; // my password is null
+	static Connection connect;
+        Statement myStmt;
+        ResultSet myRs;
+        
+	public database() {
 
-        String user = "root";
-        String pass = "1521698";
-        try {
-            // 1. Get a connection to database
-            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/deneme?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Turkey", user, pass);
+	}
 
-            // 2. Create a statement
-            myStmt = myConn.createStatement();
+	public static Connection getConnection() {
+		try {
+                    connect = DriverManager.getConnection(dburl, username, password);
 
-            // 3. Execute SQL query
-            myRs = myStmt.executeQuery("select * from calisanlar");
+		}catch(Exception e) {
+                    e.printStackTrace();
+		}
 
-            // 4. Process the result set
-            while (myRs.next()) {
-                System.out.println(myRs.getString("calisan_ad") + ", " + myRs.getString("calisan_soyad"));
-            }
-            return myConn;
+		return connect;
+	}
 
-        } catch (SQLException exc) {
-        } finally {
-            if (myRs != null) {
-                myRs.close();
-            }
+	public void close(Connection connect, Statement myStmt, ResultSet myRs) {
+		try {
+			if(connect != null)
+				connect.close();
+			if(myStmt != null)
+				myStmt.close();
+			if(myRs != null)
+				myRs.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void close(Connection connect, Statement myStmt) {
+		try {
+			close(connect, myStmt, null);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void close(Statement myStmt) {
+		try {
+			close(null, myStmt, null);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-            if (myStmt != null) {
-                myStmt.close();
-            }
 
-            if (myConn != null) {
-                myConn.close();
-            }
-        }
-            return null;
-    }
 }
 

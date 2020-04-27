@@ -48,27 +48,28 @@ public class FXMLDocumentController implements Initializable {
     
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }    
 
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private void handleButtonAction(ActionEvent event) throws IOException {
         
         if(event.getSource()== calisanlar){
-            try {
+         System.out.println("deneme3");
                 Node node=(Node) event.getSource();
                 Stage stage=(Stage) node.getScene().getWindow();
                 stage.close();
-            
+                System.out.println("deneme1");
                 Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/newprojekt/Calisanlar.fxml")));
+                System.out.println("deneme2");
                 stage.setScene(scene);
                 stage.show();
-            }   catch (IOException ex) {
-                Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+          
+            
         }
         
                 if(event.getSource()== raporlar){
-            try {
+            
                 Node node=(Node) event.getSource();
                 Stage stage=(Stage) node.getScene().getWindow();
                 stage.close();
@@ -76,9 +77,7 @@ public class FXMLDocumentController implements Initializable {
                 Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/newprojekt/raporOlusturma.fxml")));
                 stage.setScene(scene);
                 stage.show();
-            }   catch (IOException ex) {
-                Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+          
         }
         
         

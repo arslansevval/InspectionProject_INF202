@@ -28,13 +28,13 @@
             </TableView>
             <VBox alignment="CENTER" layoutX="35.0" layoutY="76.0" prefHeight="271.0" prefWidth="213.0" spacing="10.0" style="-fx-background-color: #596275;" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="344.0" AnchorPane.topAnchor="76.0">
                <children>
-                  <TextField prefHeight="27.0" prefWidth="180.0" promptText="Id" style="-fx-background-color: #dcdde1;" />
-                  <TextField prefHeight="25.0" prefWidth="117.0" promptText="Ad" style="-fx-background-color: #dcdde1;" />
-                  <TextField prefHeight="25.0" prefWidth="147.0" promptText="Soyad" style="-fx-background-color: #dcdde1;" />
+                  <TextField fx:id="txtfield_id" prefHeight="27.0" prefWidth="180.0" promptText="Id" style="-fx-background-color: #dcdde1;" />
+                  <TextField fx:id="txtfield_ad" prefHeight="25.0" prefWidth="117.0" promptText="Ad" style="-fx-background-color: #dcdde1;" />
+                  <TextField fx:id="txtfield_soyad" prefHeight="25.0" prefWidth="147.0" promptText="Soyad" style="-fx-background-color: #dcdde1;" />
                   <ComboBox fx:id="combo_box" prefHeight="25.0" prefWidth="225.0" promptText="Seviye" style="-fx-background-color: #dcdde1;" />
                   <HBox prefHeight="25.0" prefWidth="157.0" spacing="15.0">
                      <children>
-                        <Button fx:id="ekle_btt" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #dcdde1;" text="Ekle" />
+                        <Button fx:id="ekle_btt" mnemonicParsing="false" onMouseClicked="#setOnAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #dcdde1;" text="Ekle" />
                         <Button fx:id="sil_btt" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #dcdde1;" text="Sil" />
                      </children>
                   </HBox>
