@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -26,7 +23,7 @@
                   <TableColumn fx:id="calisan_soyad" prefWidth="75.0" text="Soyadı" />
               </columns>
             </TableView>
-            <VBox alignment="CENTER" layoutX="35.0" layoutY="76.0" prefHeight="271.0" prefWidth="213.0" spacing="10.0" style="-fx-background-color: #596275;" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="344.0" AnchorPane.topAnchor="76.0">
+            <VBox alignment="CENTER" layoutX="35.0" layoutY="76.0" onMouseClicked="#updateSetOnAction" prefHeight="271.0" prefWidth="213.0" spacing="10.0" style="-fx-background-color: #596275;" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="344.0" AnchorPane.topAnchor="76.0">
                <children>
                   <TextField fx:id="txtfield_id" prefHeight="27.0" prefWidth="180.0" promptText="Id" style="-fx-background-color: #dcdde1;" />
                   <TextField fx:id="txtfield_ad" prefHeight="25.0" prefWidth="117.0" promptText="Ad" style="-fx-background-color: #dcdde1;" />
@@ -34,14 +31,13 @@
                   <ComboBox fx:id="combo_box" prefHeight="25.0" prefWidth="225.0" promptText="Seviye" style="-fx-background-color: #dcdde1;" />
                   <HBox prefHeight="25.0" prefWidth="157.0" spacing="15.0">
                      <children>
-                        <Button fx:id="ekle_btt" mnemonicParsing="false" onMouseClicked="#setOnAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #dcdde1;" text="Ekle" />
-                        <Button fx:id="sil_btt" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #dcdde1;" text="Sil" />
+                        <Button fx:id="ekle_btt" mnemonicParsing="false" onMouseClicked="#addSetOnAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #dcdde1;" text="Ekle" />
+                        <Button fx:id="sil_btt" mnemonicParsing="false" onMouseClicked="#deleteSetOnAction" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #dcdde1;" text="Sil" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="27.0" prefWidth="180.0" spacing="15.0">
+                  <HBox onMouseClicked="#updateSetOnAction" prefHeight="27.0" prefWidth="337.0" spacing="15.0">
                      <children>
-                        <Button fx:id="duzenle_btt" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #dcdde1;" text="Düzenle" textAlignment="CENTER" />
-                        <Button fx:id="kaydet_btt" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" style="-fx-background-color: #dcdde1;" text="Kaydet" />
+                        <Button fx:id="btt_duzenle" mnemonicParsing="false" onMouseClicked="#updateSetOnAction" prefHeight="35.0" prefWidth="59.0" text="Düzenle" />
                      </children>
                   </HBox>
                </children>
@@ -52,27 +48,6 @@
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
-                  </Text>
-               </children>
-            </HBox>
-            <HBox layoutX="35.0" prefHeight="38.0" prefWidth="273.0">
-               <children>
-                  <Button fx:id="geri" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="38.0" prefWidth="41.0">
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/icon/bak.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Geri" textAlignment="CENTER">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets top="5.0" />
-                     </HBox.margin>
                   </Text>
                </children>
             </HBox>

@@ -58,11 +58,6 @@ public class CalisanlarController implements Initializable {
     private Button ekle_btt;
     @FXML
     private Button sil_btt;
-    @FXML
-    private Button duzenle_btt;
-    @FXML
-    private Button kaydet_btt;
-    @FXML
     private Button geri;
     
     private FXMLLoader loader;
@@ -79,6 +74,8 @@ public class CalisanlarController implements Initializable {
     private TextField txtfield_ad;
     @FXML
     private TextField txtfield_soyad;
+    @FXML
+    private Button btt_duzenle;
     
    
  
@@ -124,7 +121,6 @@ public class CalisanlarController implements Initializable {
 	}*/
 
 
-    @FXML
     private void handleButtonAction(ActionEvent event) {
         if(event.getSource()== geri){
             try {
@@ -142,13 +138,15 @@ public class CalisanlarController implements Initializable {
     }
     PreparedStatement ps;
     @FXML
-    private void setOnAction(MouseEvent event) throws SQLException {
-        	String name=txtfield_ad.getText();
+    private void addSetOnAction(MouseEvent event) throws SQLException {
+        String name=txtfield_ad.getText();
         String nach=txtfield_soyad.getText();
 	String id=txtfield_id.getText();
         String seviye=combo_box.getValue().toString();
         
         String sql="INSERT INTO calisanlar(calisan_id, calisan_ad, calisan_soyad, calisan_seviye) VALUES(?,?,?,?)";
+       // INSERT INTO `deneme`.`calisanlar` (`calisan_id`, `calisan_ad`, `calisan_soyad`, `calisan_seviye`) VALUES ('8', 'a', 'b', 'Seviye 3');
+
         ps=database.connect.prepareStatement(sql);
         ps.setString(1, id);
         ps.setString(2, name);
@@ -159,8 +157,79 @@ public class CalisanlarController implements Initializable {
         ps.executeUpdate();
         System.out.println("geldi2");
         refreshTable();
-}
-  
+    }
+
+    @FXML
+    private void deleteSetOnAction(MouseEvent event) throws SQLException {
+        String id=txtfield_id.getText();
+        System.out.println("biiiirr");
+        String sql = "DELETE  from calisanlar where calisan_id=?";
+        ps=database.connect.prepareStatement(sql);
+        
+        ps.setString(1, id);
+        
+        ps.executeUpdate();
+        System.out.println("2");
+	refreshTable();        
+    }
+
+    /*@FXML
+    private void updateSetOnAction(MouseEvent event){
+        System.out.println("geldi3");
+         String isim=txtfield_ad.getText();
+        String soy=txtfield_soyad.getText();
+	String km=txtfield_id.getText();
+        String lev=combo_box.getValue().toString();
+        
+        String sql="UPDATE calisanlar SET calisan_ad=?,calisan_soyad=?,calisan_seviye=?  WHERE calisan_id=?";
+        System.out.println("geldi");
+        //UPDATE `deneme`.`calisanlar` SET `calisan_soyad` = 'veli', `calisan_seviye` = 'seviye 2' WHERE (`calisan_id` = '1');
+
+        try {
+            
+            ps=database.connect.prepareStatement(sql);
+            System.out.println("geldi3");
+            ps.setString(1, isim);
+            ps.setString(2, soy);
+            ps.setString(3, km);
+            ps.setString(4, lev);
+
+            
+            ps.executeUpdate();
+            System.out.println("geldi2");
+            refreshTable();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+        
+    }*/
+    
+    @FXML
+    private void updateSetOnAction(MouseEvent event) throws SQLException {
+
+        String name=txtfield_ad.getText();
+        String nach=txtfield_soyad.getText();
+	String id=txtfield_id.getText();
+        String seviye=combo_box.getValue().toString();
+        
+        String sql="UPDATE calisanlar SET calisan_ad=?, calisan_soyad=?, calisan_seviye=? WHERE calisan_id=?";
+       // INSERT INTO `deneme`.`calisanlar` (`calisan_id`, `calisan_ad`, `calisan_soyad`, `calisan_seviye`) VALUES ('8', 'a', 'b', 'Seviye 3');
+
+        ps=database.connect.prepareStatement(sql);
+        ps.setString(1, name);
+        ps.setString(2, nach);
+        ps.setString(3, seviye);
+        ps.setString(4, id);
+        
+        System.out.println("geldi");
+        ps.executeUpdate();
+        System.out.println("geldi2");
+        refreshTable();
+        
+    }
+
+ 
 
 }
 
