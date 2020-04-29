@@ -1,55 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newprojekt.CalisanlarController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="714.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newprojekt.CalisanlarController">
    <children>
-      <AnchorPane prefHeight="594.0" prefWidth="716.0" style="-fx-background-color: #596275;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane layoutX="-6.0" layoutY="-6.0" prefHeight="726.0" prefWidth="724.0" style="-fx-background-color: #596275;" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-2.0">
          <children>
-            <TableView fx:id="calisan_table" layoutX="389.0" layoutY="130.0" prefHeight="335.0" prefWidth="307.0" style="-fx-background-color: #dcdde1;">
-              <columns>
-                  <TableColumn fx:id="calisan_id" prefWidth="75.0" text="Id" />
-                <TableColumn fx:id="calisan_seviye" prefWidth="75.0" text="Seviye" />
-                <TableColumn fx:id="calisan_ad" prefWidth="75.0" text="Adı" />
-                  <TableColumn fx:id="calisan_soyad" prefWidth="75.0" text="Soyadı" />
-              </columns>
-            </TableView>
-            <VBox alignment="CENTER" layoutX="35.0" layoutY="76.0" onMouseClicked="#updateSetOnAction" prefHeight="271.0" prefWidth="213.0" spacing="10.0" style="-fx-background-color: #596275;" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="344.0" AnchorPane.topAnchor="76.0">
+            <HBox layoutX="415.0" layoutY="85.0" prefHeight="25.0" prefWidth="215.0">
                <children>
-                  <TextField fx:id="txtfield_id" prefHeight="27.0" prefWidth="180.0" promptText="Id" style="-fx-background-color: #dcdde1;" />
-                  <TextField fx:id="txtfield_ad" prefHeight="25.0" prefWidth="117.0" promptText="Ad" style="-fx-background-color: #dcdde1;" />
-                  <TextField fx:id="txtfield_soyad" prefHeight="25.0" prefWidth="147.0" promptText="Soyad" style="-fx-background-color: #dcdde1;" />
-                  <ComboBox fx:id="combo_box" prefHeight="25.0" prefWidth="225.0" promptText="Seviye" style="-fx-background-color: #dcdde1;" />
-                  <HBox prefHeight="25.0" prefWidth="157.0" spacing="15.0">
-                     <children>
-                        <Button fx:id="ekle_btt" mnemonicParsing="false" onMouseClicked="#addSetOnAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #dcdde1;" text="Ekle" />
-                        <Button fx:id="sil_btt" mnemonicParsing="false" onMouseClicked="#deleteSetOnAction" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #dcdde1;" text="Sil" />
-                     </children>
-                  </HBox>
-                  <HBox onMouseClicked="#updateSetOnAction" prefHeight="27.0" prefWidth="337.0" spacing="15.0">
-                     <children>
-                        <Button fx:id="btt_duzenle" mnemonicParsing="false" onMouseClicked="#updateSetOnAction" prefHeight="35.0" prefWidth="59.0" text="Düzenle" />
-                     </children>
-                  </HBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Çalışanlar Listesi" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Text>
                </children>
-            </VBox>
-            <HBox layoutX="35.0" layoutY="47.0" prefHeight="35.0" prefWidth="484.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox layoutX="26.0" layoutY="14.0" prefHeight="47.0" prefWidth="200.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Çalışanlar Listesi">
+                  <Button fx:id="geri" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="46.0" prefWidth="53.0" style="-fx-background-color: #EA2027;">
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/icon/back.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Geri">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
                </children>
+            </HBox>
+            <HBox layoutY="127.0" prefHeight="354.0" prefWidth="683.0" spacing="100.0">
+               <children>
+                  <VBox alignment="CENTER" onMouseClicked="#updateSetOnAction" prefHeight="390.0" prefWidth="229.0" spacing="10.0" style="-fx-background-color: #596275;">
+                     <children>
+                        <TextField fx:id="txtfield_id" prefHeight="27.0" prefWidth="180.0" promptText="Id" style="-fx-background-color: #dcdde1;" />
+                        <TextField fx:id="txtfield_ad" prefHeight="25.0" prefWidth="117.0" promptText="Ad" style="-fx-background-color: #dcdde1;" />
+                        <TextField fx:id="txtfield_soyad" prefHeight="25.0" prefWidth="147.0" promptText="Soyad" style="-fx-background-color: #dcdde1;" />
+                        <ComboBox fx:id="combo_box" prefHeight="25.0" prefWidth="227.0" promptText="Seviye" style="-fx-background-color: #EA2027;" />
+                        <HBox prefHeight="25.0" prefWidth="157.0" spacing="27.0">
+                           <children>
+                              <Button fx:id="ekle_btt" mnemonicParsing="false" onMouseClicked="#addSetOnAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #EA2027;" text="Ekle" />
+                              <Button fx:id="sil_btt" mnemonicParsing="false" onMouseClicked="#deleteSetOnAction" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #EA2027;" text="Sil" />
+                              <Button fx:id="btt_duzenle" mnemonicParsing="false" onMouseClicked="#updateSetOnAction" prefHeight="35.0" prefWidth="59.0" style="-fx-background-color: #EA2027;" text="Düzenle" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <TableView fx:id="calisan_table" prefHeight="340.0" prefWidth="294.0" style="-fx-background-color: #EA2027;">
+                    <columns>
+                        <TableColumn fx:id="calisan_id" prefWidth="75.0" text="Id" />
+                      <TableColumn fx:id="calisan_seviye" prefWidth="75.0" text="Seviye" />
+                      <TableColumn fx:id="calisan_ad" prefWidth="75.0" text="Adı" />
+                        <TableColumn fx:id="calisan_soyad" prefWidth="75.0" text="Soyadı" />
+                    </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
             </HBox>
          </children>
       </AnchorPane>

@@ -30,11 +30,11 @@ import javafx.stage.Stage;
 public class RaporOlusturmaController implements Initializable {
 
     @FXML
-    private Button yenirapor;
-    @FXML
     private BorderPane border;
     @FXML
     private Button geri;
+    @FXML
+    private Button yenirapor;
 
     /**
      * Initializes the controller class.
@@ -66,5 +66,9 @@ public class RaporOlusturmaController implements Initializable {
             }
         }
     }
+
+
+ 
+
     
 }

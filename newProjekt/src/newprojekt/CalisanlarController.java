@@ -58,6 +58,7 @@ public class CalisanlarController implements Initializable {
     private Button ekle_btt;
     @FXML
     private Button sil_btt;
+    @FXML
     private Button geri;
     
     private FXMLLoader loader;
@@ -112,15 +113,10 @@ public class CalisanlarController implements Initializable {
 	calisan_table.setItems(dao.getCalisanData(query));
 		
 	} 
-        /*private void insertNewAccount() { // for adding new account
-		txtfield_id.setText("");
-                txtfield_ad.setText("");
-		txtfield_soyad.setText("");
-                combo_box.getSelectionModel().select(0);
-		
-	}*/
 
 
+
+    @FXML
     private void handleButtonAction(ActionEvent event) {
         if(event.getSource()== geri){
             try {

@@ -8,22 +8,15 @@ package newprojekt;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
@@ -39,13 +32,12 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private Button calisanlar;
-    @FXML
-    private BorderPane busbus;
+
+  
     @FXML
     private Button raporlar;
+    
     @Override
-    
-    
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
@@ -55,7 +47,8 @@ public class FXMLDocumentController implements Initializable {
     private void handleButtonAction(ActionEvent event) throws IOException {
         
         if(event.getSource()== calisanlar){
-         System.out.println("deneme3");
+            
+                System.out.println("deneme3");
                 Node node=(Node) event.getSource();
                 Stage stage=(Stage) node.getScene().getWindow();
                 stage.close();
@@ -64,21 +57,20 @@ public class FXMLDocumentController implements Initializable {
                 System.out.println("deneme2");
                 stage.setScene(scene);
                 stage.show();
-          
-            
         }
         
                 if(event.getSource()== raporlar){
-            
+                    
+                System.out.println("deneme1");
                 Node node=(Node) event.getSource();
                 Stage stage=(Stage) node.getScene().getWindow();
                 stage.close();
-            
+                System.out.println("deneme2");
                 Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/newprojekt/raporOlusturma.fxml")));
+                System.out.println("deneme3");
                 stage.setScene(scene);
                 stage.show();
-          
-        }
+        } 
         
         
     }
