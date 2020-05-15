@@ -9,6 +9,7 @@ public class database {
 	private static final String username = "root"; // my  username is ken
 	private static final String password = "1521698"; // my password is null
 	static Connection connect;
+        public static PreparedStatement ps;
         Statement myStmt;
         ResultSet myRs;
         
@@ -53,6 +54,11 @@ public class database {
 			e.printStackTrace();
 		}
 	}
+	
+        
+
+
+
 
 
 }

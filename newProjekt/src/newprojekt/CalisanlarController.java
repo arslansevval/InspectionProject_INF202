@@ -8,7 +8,6 @@ package newprojekt;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -27,7 +26,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 
@@ -41,18 +39,18 @@ public class CalisanlarController implements Initializable {
 
 
     @FXML
-    private TableView<Calisanlar> calisan_table;
+    public TableView<Calisanlar> calisan_table;
     @FXML
-    private TableColumn<Calisanlar, Integer> calisan_id;
+    public TableColumn<Calisanlar, Integer> calisan_id;
     @FXML
-    private TableColumn<Calisanlar, String> calisan_seviye;
+    public TableColumn<Calisanlar, String> calisan_seviye;
     @FXML
-    private TableColumn<Calisanlar, String> calisan_ad;
+    public TableColumn<Calisanlar, String> calisan_ad;
     @FXML
-    private TableColumn<Calisanlar, String> calisan_soyad;
+    public TableColumn<Calisanlar, String> calisan_soyad;
     
     @FXML
-    private ComboBox<String> combo_box;
+     ComboBox<String> combo_box;
     ObservableList<String> seviyeList = FXCollections.observableArrayList();
     @FXML
     private Button ekle_btt;
@@ -61,20 +59,21 @@ public class CalisanlarController implements Initializable {
     @FXML
     private Button geri;
     
-    private FXMLLoader loader;
-    private String query, ad, soyad, seviye;
-    private int id;
-    DataAccessObject dao;
+  
+    
+    
+    
     private database db;
+    private DataAccessObject dao;
     private Connection connect;
-    private boolean EDIT=false, ADD=true;
+    private String query;
     
     @FXML
-    private TextField txtfield_id;
+     TextField txtfield_id;
     @FXML
-    private TextField txtfield_ad;
+     TextField txtfield_ad;
     @FXML
-    private TextField txtfield_soyad;
+     TextField txtfield_soyad;
     @FXML
     private Button btt_duzenle;
     
@@ -84,14 +83,17 @@ public class CalisanlarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       database.getConnection();
-      dao = new DataAccessObject();
-      loadData();
-      initTable();
-      refreshTable();    
+        db.getConnection();
+        loadData();
+        dao.initTable();
+        dao.refreshTable();
+        String name=txtfield_ad.getText();
+        String nach=txtfield_soyad.getText();
+        String seviye=combo_box.getValue();
+        
                 
     }
-      private void loadData() {
+    private void loadData() {
     seviyeList.removeAll(seviyeList);
     String a = "Seviye 1";
     String b = "Seviye 2";
@@ -100,19 +102,20 @@ public class CalisanlarController implements Initializable {
     combo_box.getItems().addAll(seviyeList);
   }
     
-    private void initTable() {
-        calisan_id.setCellValueFactory(cell->cell.getValue().getpID().asObject());
-	calisan_ad.setCellValueFactory(cell->cell.getValue().getpFirstname());
-	calisan_soyad.setCellValueFactory(cell->cell.getValue().getpLastname());
-	calisan_seviye.setCellValueFactory(cell->cell.getValue().getpSeviye());
-	}
+    void initTable() {
+        calisan_id.setCellValueFactory(cell->cell.getValue().getcID().asObject());
+	calisan_ad.setCellValueFactory(cell->cell.getValue().getcFirstname());
+	calisan_soyad.setCellValueFactory(cell->cell.getValue().getcLastname());
+	calisan_seviye.setCellValueFactory(cell->cell.getValue().getcSeviye());
+    }
 	
+    
     private void refreshTable() {
 	initTable();
 	query = "SELECT * from calisanlar ";
 	calisan_table.setItems(dao.getCalisanData(query));
 		
-	} 
+    } 
 
 
 
@@ -127,18 +130,20 @@ public class CalisanlarController implements Initializable {
                 Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/newprojekt/FXMLDocument.fxml")));
                 stage.setScene(scene);
                 stage.show();
-            }   catch (IOException ex) {
+            }   
+            catch (IOException ex) {
                 Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
+    /*
     PreparedStatement ps;
     @FXML
     private void addSetOnAction(MouseEvent event) throws SQLException {
         String name=txtfield_ad.getText();
         String nach=txtfield_soyad.getText();
 	String id=txtfield_id.getText();
-        String seviye=combo_box.getValue().toString();
+        String seviye=combo_box.getValue();
         
         String sql="INSERT INTO calisanlar(calisan_id, calisan_ad, calisan_soyad, calisan_seviye) VALUES(?,?,?,?)";
        // INSERT INTO `deneme`.`calisanlar` (`calisan_id`, `calisan_ad`, `calisan_soyad`, `calisan_seviye`) VALUES ('8', 'a', 'b', 'Seviye 3');
@@ -169,37 +174,7 @@ public class CalisanlarController implements Initializable {
 	refreshTable();        
     }
 
-    /*@FXML
-    private void updateSetOnAction(MouseEvent event){
-        System.out.println("geldi3");
-         String isim=txtfield_ad.getText();
-        String soy=txtfield_soyad.getText();
-	String km=txtfield_id.getText();
-        String lev=combo_box.getValue().toString();
-        
-        String sql="UPDATE calisanlar SET calisan_ad=?,calisan_soyad=?,calisan_seviye=?  WHERE calisan_id=?";
-        System.out.println("geldi");
-        //UPDATE `deneme`.`calisanlar` SET `calisan_soyad` = 'veli', `calisan_seviye` = 'seviye 2' WHERE (`calisan_id` = '1');
 
-        try {
-            
-            ps=database.connect.prepareStatement(sql);
-            System.out.println("geldi3");
-            ps.setString(1, isim);
-            ps.setString(2, soy);
-            ps.setString(3, km);
-            ps.setString(4, lev);
-
-            
-            ps.executeUpdate();
-            System.out.println("geldi2");
-            refreshTable();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        
-        
-    }*/
     
     @FXML
     private void updateSetOnAction(MouseEvent event) throws SQLException {
@@ -207,7 +182,7 @@ public class CalisanlarController implements Initializable {
         String name=txtfield_ad.getText();
         String nach=txtfield_soyad.getText();
 	String id=txtfield_id.getText();
-        String seviye=combo_box.getValue().toString();
+        String seviye=combo_box.getValue();
         
         String sql="UPDATE calisanlar SET calisan_ad=?, calisan_soyad=?, calisan_seviye=? WHERE calisan_id=?";
        // INSERT INTO `deneme`.`calisanlar` (`calisan_id`, `calisan_ad`, `calisan_soyad`, `calisan_seviye`) VALUES ('8', 'a', 'b', 'Seviye 3');
@@ -225,7 +200,18 @@ public class CalisanlarController implements Initializable {
         
     }
 
- 
+ */
+
+    @FXML
+    private void setOnAction(ActionEvent event) throws SQLException {
+        String id=txtfield_id.getText();
+        database.deleteSetOnAction(id);
+        db.refreshTable();  
+    }
+
+
+
+
 
 }
 

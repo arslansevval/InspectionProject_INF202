@@ -56,7 +56,7 @@
             </HBox>
             <HBox layoutY="127.0" prefHeight="354.0" prefWidth="683.0" spacing="100.0">
                <children>
-                  <VBox alignment="CENTER" onMouseClicked="#updateSetOnAction" prefHeight="390.0" prefWidth="229.0" spacing="10.0" style="-fx-background-color: #596275;">
+                  <VBox alignment="CENTER" prefHeight="390.0" prefWidth="229.0" spacing="10.0" style="-fx-background-color: #596275;">
                      <children>
                         <TextField fx:id="txtfield_id" prefHeight="27.0" prefWidth="180.0" promptText="Id" style="-fx-background-color: #dcdde1;" />
                         <TextField fx:id="txtfield_ad" prefHeight="25.0" prefWidth="117.0" promptText="Ad" style="-fx-background-color: #dcdde1;" />
@@ -64,9 +64,9 @@
                         <ComboBox fx:id="combo_box" prefHeight="25.0" prefWidth="227.0" promptText="Seviye" style="-fx-background-color: #EA2027;" />
                         <HBox prefHeight="25.0" prefWidth="157.0" spacing="27.0">
                            <children>
-                              <Button fx:id="ekle_btt" mnemonicParsing="false" onMouseClicked="#addSetOnAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #EA2027;" text="Ekle" />
-                              <Button fx:id="sil_btt" mnemonicParsing="false" onMouseClicked="#deleteSetOnAction" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #EA2027;" text="Sil" />
-                              <Button fx:id="btt_duzenle" mnemonicParsing="false" onMouseClicked="#updateSetOnAction" prefHeight="35.0" prefWidth="59.0" style="-fx-background-color: #EA2027;" text="Düzenle" />
+                              <Button fx:id="ekle_btt" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #EA2027;" text="Ekle" />
+                              <Button fx:id="sil_btt" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #EA2027;" text="Sil" />
+                              <Button fx:id="btt_duzenle" mnemonicParsing="false" prefHeight="35.0" prefWidth="59.0" style="-fx-background-color: #EA2027;" text="Düzenle" />
                            </children>
                         </HBox>
                      </children>
