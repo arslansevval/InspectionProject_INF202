@@ -41,7 +41,7 @@ public class CalisanlarController implements Initializable {
     @FXML
     public TableView<Calisanlar> calisan_table;
     @FXML
-    public TableColumn<Calisanlar, Integer> calisan_id;
+    public TableColumn<Calisanlar, String> calisan_id;
     @FXML
     public TableColumn<Calisanlar, String> calisan_seviye;
     @FXML
@@ -66,7 +66,9 @@ public class CalisanlarController implements Initializable {
     private database db;
     private DataAccessObject dao;
     private Connection connect;
-    private String query;
+    private String query,id,name,nachname,seviye;
+    private static boolean EDIT = false, ADD = true;
+    public FXMLLoader loader;
     
     @FXML
      TextField txtfield_id;
@@ -76,6 +78,8 @@ public class CalisanlarController implements Initializable {
      TextField txtfield_soyad;
     @FXML
     private Button btt_duzenle;
+    @FXML
+    private Button btt_kaydet;
     
    
  
@@ -83,13 +87,51 @@ public class CalisanlarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        DataAccessObject dao = new DataAccessObject();
         db.getConnection();
         loadData();
-        dao.initTable();
-        dao.refreshTable();
-        String name=txtfield_ad.getText();
-        String nach=txtfield_soyad.getText();
-        String seviye=combo_box.getValue();
+
+
+
+	ekle_btt.setOnAction(e->{
+            String i = txtfield_id.getText();
+            String na = txtfield_ad.getText();
+            String nach = txtfield_soyad.getText();
+            String sevi = combo_box.getValue();
+            dao.insertCalisan(i, na, nach, sevi);
+            refreshTable();
+	});
+
+
+
+        sil_btt.setOnAction(e->{
+            Calisanlar selected = calisan_table.getSelectionModel().getSelectedItem();
+            id = selected.getcID().get();
+            dao.deleteCalisan(id);
+            refreshTable();
+   
+
+        });
+        btt_duzenle.setOnAction(e->{
+            ADD = false;
+            EDIT = true;
+            editAccount();
+            refreshTable();
+        });
+        
+	btt_kaydet.setOnAction(e->{
+            id= txtfield_id.getText();
+            name = txtfield_ad.getText();
+            nachname = txtfield_soyad.getText();
+            seviye = combo_box.getValue();            
+            dao.updateCalisan(id, name, nachname, seviye);
+            refreshTable();
+	});
+        
+        initTable();
+        refreshTable();
+
+
         
                 
     }
@@ -102,21 +144,27 @@ public class CalisanlarController implements Initializable {
     combo_box.getItems().addAll(seviyeList);
   }
     
-    void initTable() {
-        calisan_id.setCellValueFactory(cell->cell.getValue().getcID().asObject());
+    public void initTable() {
+        calisan_id.setCellValueFactory(cell->cell.getValue().getcID());
 	calisan_ad.setCellValueFactory(cell->cell.getValue().getcFirstname());
 	calisan_soyad.setCellValueFactory(cell->cell.getValue().getcLastname());
 	calisan_seviye.setCellValueFactory(cell->cell.getValue().getcSeviye());
     }
 	
     
-    private void refreshTable() {
+    public void refreshTable() {
 	initTable();
 	query = "SELECT * from calisanlar ";
 	calisan_table.setItems(dao.getCalisanData(query));
 		
     } 
-
+    private void editAccount() {
+        Calisanlar selected = calisan_table.getSelectionModel().getSelectedItem();
+        txtfield_id.setText(selected.getcID().get());
+        txtfield_ad.setText(selected.getcFirstname().get());
+        txtfield_soyad.setText(selected.getcLastname().get());
+        combo_box.getSelectionModel().select(selected.getcSeviye().get());
+    }
 
 
     @FXML
@@ -136,78 +184,9 @@ public class CalisanlarController implements Initializable {
             }
         }
     }
-    /*
-    PreparedStatement ps;
-    @FXML
-    private void addSetOnAction(MouseEvent event) throws SQLException {
-        String name=txtfield_ad.getText();
-        String nach=txtfield_soyad.getText();
-	String id=txtfield_id.getText();
-        String seviye=combo_box.getValue();
-        
-        String sql="INSERT INTO calisanlar(calisan_id, calisan_ad, calisan_soyad, calisan_seviye) VALUES(?,?,?,?)";
-       // INSERT INTO `deneme`.`calisanlar` (`calisan_id`, `calisan_ad`, `calisan_soyad`, `calisan_seviye`) VALUES ('8', 'a', 'b', 'Seviye 3');
-
-        ps=database.connect.prepareStatement(sql);
-        ps.setString(1, id);
-        ps.setString(2, name);
-        ps.setString(3, nach);
-        ps.setString(4, seviye);
-        
-        System.out.println("geldi");
-        ps.executeUpdate();
-        System.out.println("geldi2");
-        refreshTable();
-    }
-
-    @FXML
-    private void deleteSetOnAction(MouseEvent event) throws SQLException {
-        String id=txtfield_id.getText();
-        System.out.println("biiiirr");
-        String sql = "DELETE  from calisanlar where calisan_id=?";
-        ps=database.connect.prepareStatement(sql);
-        
-        ps.setString(1, id);
-        
-        ps.executeUpdate();
-        System.out.println("2");
-	refreshTable();        
-    }
 
 
-    
-    @FXML
-    private void updateSetOnAction(MouseEvent event) throws SQLException {
 
-        String name=txtfield_ad.getText();
-        String nach=txtfield_soyad.getText();
-	String id=txtfield_id.getText();
-        String seviye=combo_box.getValue();
-        
-        String sql="UPDATE calisanlar SET calisan_ad=?, calisan_soyad=?, calisan_seviye=? WHERE calisan_id=?";
-       // INSERT INTO `deneme`.`calisanlar` (`calisan_id`, `calisan_ad`, `calisan_soyad`, `calisan_seviye`) VALUES ('8', 'a', 'b', 'Seviye 3');
-
-        ps=database.connect.prepareStatement(sql);
-        ps.setString(1, name);
-        ps.setString(2, nach);
-        ps.setString(3, seviye);
-        ps.setString(4, id);
-        
-        System.out.println("geldi");
-        ps.executeUpdate();
-        System.out.println("geldi2");
-        refreshTable();
-        
-    }
-
- */
-
-    @FXML
-    private void setOnAction(ActionEvent event) throws SQLException {
-        String id=txtfield_id.getText();
-        database.deleteSetOnAction(id);
-        db.refreshTable();  
-    }
 
 
 

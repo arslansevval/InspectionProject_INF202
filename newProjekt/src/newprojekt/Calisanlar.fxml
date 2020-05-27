@@ -14,9 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="714.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newprojekt.CalisanlarController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newprojekt.CalisanlarController">
    <children>
-      <AnchorPane layoutX="-6.0" layoutY="-6.0" prefHeight="726.0" prefWidth="724.0" style="-fx-background-color: #596275;" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-2.0">
+      <AnchorPane layoutY="-8.0" prefHeight="684.0" prefWidth="750.0" style="-fx-background-color: #596275;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <HBox layoutX="415.0" layoutY="85.0" prefHeight="25.0" prefWidth="215.0">
                <children>
@@ -54,9 +54,9 @@
                   </Text>
                </children>
             </HBox>
-            <HBox layoutY="127.0" prefHeight="354.0" prefWidth="683.0" spacing="100.0">
+            <HBox layoutY="127.0" prefHeight="354.0" prefWidth="724.0" spacing="100.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="390.0" prefWidth="229.0" spacing="10.0" style="-fx-background-color: #596275;">
+                  <VBox alignment="CENTER" prefHeight="354.0" prefWidth="358.0" spacing="10.0" style="-fx-background-color: #596275;">
                      <children>
                         <TextField fx:id="txtfield_id" prefHeight="27.0" prefWidth="180.0" promptText="Id" style="-fx-background-color: #dcdde1;" />
                         <TextField fx:id="txtfield_ad" prefHeight="25.0" prefWidth="117.0" promptText="Ad" style="-fx-background-color: #dcdde1;" />
@@ -64,14 +64,15 @@
                         <ComboBox fx:id="combo_box" prefHeight="25.0" prefWidth="227.0" promptText="Seviye" style="-fx-background-color: #EA2027;" />
                         <HBox prefHeight="25.0" prefWidth="157.0" spacing="27.0">
                            <children>
-                              <Button fx:id="ekle_btt" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #EA2027;" text="Ekle" />
-                              <Button fx:id="sil_btt" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #EA2027;" text="Sil" />
-                              <Button fx:id="btt_duzenle" mnemonicParsing="false" prefHeight="35.0" prefWidth="59.0" style="-fx-background-color: #EA2027;" text="Düzenle" />
+                              <Button fx:id="ekle_btt" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #EA2027;" text="Ekle" />
+                              <Button fx:id="sil_btt" mnemonicParsing="false" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: #EA2027;" text="Sil" />
+                              <Button fx:id="btt_duzenle" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #EA2027;" text="Düzenle" />
+                              <Button fx:id="btt_kaydet" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #EA2027;" text="Kaydet" />
                            </children>
                         </HBox>
                      </children>
                   </VBox>
-                  <TableView fx:id="calisan_table" prefHeight="340.0" prefWidth="294.0" style="-fx-background-color: #EA2027;">
+                  <TableView fx:id="calisan_table" prefHeight="354.0" prefWidth="388.0" style="-fx-background-color: #EA2027;">
                     <columns>
                         <TableColumn fx:id="calisan_id" prefWidth="75.0" text="Id" />
                       <TableColumn fx:id="calisan_seviye" prefWidth="75.0" text="Seviye" />
