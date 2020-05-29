@@ -86,7 +86,7 @@
             </HBox>
             <HBox prefHeight="52.0" prefWidth="131.0" spacing="5.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="52.0" style="-fx-background-color: #EA2027;">
+                  <Button fx:id="exportToXLS" mnemonicParsing="false" prefHeight="54.0" prefWidth="52.0" style="-fx-background-color: #EA2027;">
                      <graphic>
                         <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                            <image>

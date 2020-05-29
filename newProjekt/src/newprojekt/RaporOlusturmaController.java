@@ -18,15 +18,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author arsla
- */
+
 public class RaporOlusturmaController implements Initializable {
 
     @FXML
@@ -35,13 +32,15 @@ public class RaporOlusturmaController implements Initializable {
     private Button geri;
     @FXML
     private Button yenirapor;
-
+    @FXML
+    private Button exportToXLS;
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }    
 
     @FXML
@@ -66,6 +65,7 @@ public class RaporOlusturmaController implements Initializable {
             }
         }
     }
+    
 
 
  
