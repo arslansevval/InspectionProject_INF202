@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package newprojekt;
+package controller;
 
+import controller.FXMLDocumentController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -45,7 +46,7 @@ public class RaporOlusturmaController implements Initializable {
 
     @FXML
     private void show_yenirapor(MouseEvent event) throws IOException {
-        Parent yenirapor = FXMLLoader.load(getClass().getResource("/newprojekt/raporlar.fxml"));
+        Parent yenirapor = FXMLLoader.load(getClass().getResource("/fxml/raporlar.fxml"));
         border.setCenter(yenirapor);
     }
 
@@ -57,7 +58,7 @@ public class RaporOlusturmaController implements Initializable {
                 Stage stage=(Stage) node.getScene().getWindow();
                 stage.close();
             
-                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/newprojekt/FXMLDocument.fxml")));
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/fxml/FXMLDocument.fxml")));
                 stage.setScene(scene);
                 stage.show();
             }   catch (IOException ex) {

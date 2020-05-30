@@ -1,4 +1,4 @@
-package newprojekt;
+package database;
 
 import java.sql.*;
 

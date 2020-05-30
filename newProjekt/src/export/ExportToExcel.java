@@ -1,4 +1,4 @@
-package newprojekt;
+package export;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,7 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExportToExcel {
 
-    public static void main(String[] args) throws IOException  {
+    public void excel(String musteriAd) throws IOException  {
         
             FileInputStream inputStream = new FileInputStream(new File("MagneticReport.xlsx"));
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream); 
@@ -26,7 +26,7 @@ public class ExportToExcel {
             
             XSSFRow row = sheet.getRow(2);
             XSSFCell cell = row.createCell(3);
-            cell.setCellValue("ARSLAN GEMİ");
+            cell.setCellValue(musteriAd);
             cell.setCellStyle(style1);
             
             XSSFRow row2 = sheet.getRow(3);
@@ -41,7 +41,7 @@ public class ExportToExcel {
             
             inputStream.close();
  
-            FileOutputStream outputStream = new FileOutputStream("MagneticReport1.xlsx");
+            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\arsla\\Documents\\NetBeansProjects\\Projekt\\newProjekt\\MagneticReport.xlsx");
             workbook.write(outputStream);
             workbook.close();
             outputStream.close();

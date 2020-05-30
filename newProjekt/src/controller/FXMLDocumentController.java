@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package newprojekt;
+package controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -53,7 +53,7 @@ public class FXMLDocumentController implements Initializable {
                 Stage stage=(Stage) node.getScene().getWindow();
                 stage.close();
                 System.out.println("deneme1");
-                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/newprojekt/Calisanlar.fxml")));
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/fxml/Calisanlar.fxml")));
                 System.out.println("deneme2");
                 stage.setScene(scene);
                 stage.show();
@@ -66,7 +66,7 @@ public class FXMLDocumentController implements Initializable {
                 Stage stage=(Stage) node.getScene().getWindow();
                 stage.close();
                 System.out.println("deneme2");
-                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/newprojekt/raporOlusturma.fxml")));
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/fxml/raporOlusturma.fxml")));
                 System.out.println("deneme3");
                 stage.setScene(scene);
                 stage.show();

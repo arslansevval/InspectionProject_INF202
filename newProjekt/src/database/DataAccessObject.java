@@ -1,6 +1,7 @@
 
-package newprojekt;
+package database;
 
+import controller.CalisanlarController;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +13,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
-import static newprojekt.database.ps;
+import newprojekt.Calisanlar;
+import static database.database.ps;
+import newprojekt.Musteri;
 
 
 public class DataAccessObject {
@@ -106,71 +109,35 @@ public class DataAccessObject {
             Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-
+    public static ObservableList<Musteri> getMusteriData(String query){
+	ObservableList list = FXCollections.observableArrayList();
+	try {
+            connect = db.getConnection();
+            pstmt = connect.prepareStatement(query);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+		list.add(new Musteri(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
+            }
+	}
+        catch(Exception e) {
+            e.printStackTrace();
+	}
+		
+	return list;
+	}
+    public ObservableList<String> showMusteri(String sql) throws SQLException {
+        ObservableList<String> musteriList = FXCollections.observableArrayList();
+        connect = db.getConnection();
+        pstmt = connect.prepareStatement(sql);
+        rs = pstmt.executeQuery("SELECT musteri_ad from musteriler ");
+        while(rs.next()){
+            musteriList.addAll(rs.getString("musteri_ad"));
+        }
+        return musteriList;
+    }
     
-       /* @FXML
-        public void addSetOnAction(MouseEvent event) throws SQLException {
-            String name=ca.txtfield_ad.getText();
-            String nach=ca.txtfield_soyad.getText();
-            String id=ca.txtfield_id.getText();
-            String seviye=ca.combo_box.getValue();
-        
-            String sql="INSERT INTO calisanlar(calisan_id, calisan_ad, calisan_soyad, calisan_seviye) VALUES(?,?,?,?)";
-       // INSERT INTO `deneme`.`calisanlar` (`calisan_id`, `calisan_ad`, `calisan_soyad`, `calisan_seviye`) VALUES ('8', 'a', 'b', 'Seviye 3');
-
-            ps=database.connect.prepareStatement(sql);
-            ps.setString(1, id);
-            ps.setString(2, name);
-            ps.setString(3, nach);
-            ps.setString(4, seviye);
-        
-            System.out.println("geldi");
-            ps.executeUpdate();
-            System.out.println("geldi2");
-            refreshTable();
-        }
-
-        @FXML
-        public static void deleteSetOnAction(String id) throws SQLException {
-            
-            System.out.println("biiiirr");
-            String sql = "DELETE  from calisanlar where calisan_id=?";
-            ps=database.connect.prepareStatement(sql);
-        
-            ps.setString(1, id);
-        
-            ps.executeUpdate();
-            System.out.println("2");
-                  
-        }
 
 
-    
-        @FXML
-        public void updateSetOnAction(MouseEvent event) throws SQLException {
-
-            String name=ca.txtfield_ad.getText();
-            String nach=ca.txtfield_soyad.getText();
-            String id=ca.txtfield_id.getText();
-            String seviye=ca.combo_box.getValue();
-        
-            String sql="UPDATE calisanlar SET calisan_ad=?, calisan_soyad=?, calisan_seviye=? WHERE calisan_id=?";
-            // INSERT INTO `deneme`.`calisanlar` (`calisan_id`, `calisan_ad`, `calisan_soyad`, `calisan_seviye`) VALUES ('8', 'a', 'b', 'Seviye 3');
-
-            ps=database.connect.prepareStatement(sql);
-            ps.setString(1, name);
-            ps.setString(2, nach);
-            ps.setString(3, seviye);
-            ps.setString(4, id);
-        
-            System.out.println("geldi");
-            ps.executeUpdate();
-            System.out.println("geldi2");
-            refreshTable();
-        
-        }
-    */
 }
         
         

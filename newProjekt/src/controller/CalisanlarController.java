@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package newprojekt;
+package controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,6 +26,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import newprojekt.Calisanlar;
+import database.DataAccessObject;
+import database.database;
 
 
 /**
@@ -174,7 +177,7 @@ public class CalisanlarController implements Initializable {
                 Stage stage=(Stage) node.getScene().getWindow();
                 stage.close();
             
-                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/newprojekt/FXMLDocument.fxml")));
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/fxml/FXMLDocument.fxml")));
                 stage.setScene(scene);
                 stage.show();
             }   
