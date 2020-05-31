@@ -22,9 +22,17 @@ public class Ekipman {
         this.uvİsikSiddeti = new SimpleStringProperty(uvİsikSiddeti);
         this.isikMesafesi = new SimpleStringProperty(isikMesafesi);
     }
-    public Ekipman(String cihaz, String kutupmesafesi){
-        this.cihaz = new SimpleStringProperty(cihaz);
+    public Ekipman(String kutupmesafesi, String mpTasiyiciOrtam, String miknatislamaTeknigi, String uvİsikSiddeti, String isikMesafesi){
         this.kutupMesafesi = new SimpleStringProperty(kutupmesafesi);
+        this.mpTasiyiciOrtam = new SimpleStringProperty(mpTasiyiciOrtam);
+        this.miknatislamaTeknigi = new SimpleStringProperty(miknatislamaTeknigi);
+        this.uvİsikSiddeti = new SimpleStringProperty(uvİsikSiddeti);
+        this.isikMesafesi = new SimpleStringProperty(isikMesafesi);
+    }
+
+    public String toString(){
+        return this.getKutupMesafesi().getValue() + " " + this.getMpTasiyiciOrtam().getValue() + " " + this.getMiknatislamaTeknigi().getValue()
+                + " " + this.getUvİsikSiddeti().getValue() + " " + this.getIsikMesafesi().getValue();
     }
     /**
      * @return the cihaz

@@ -22,6 +22,8 @@ public class DataAccessObject {
     private static PreparedStatement pstmt;
     private static Connection connect;
     public static CalisanlarController ca = new CalisanlarController();
+
+
     public String query,name,nachname,seviye,id;
     private boolean EDIT=false, ADD=true;
     PreparedStatement ps;
@@ -149,7 +151,37 @@ public class DataAccessObject {
 		
 	return list;
     }
-     public ObservableList<Calisanlar> choiceCalisan(){
+    public ObservableList<String> showCihaz(String sql) throws SQLException {
+        ObservableList<String> cihazList = FXCollections.observableArrayList();
+        connect = db.getConnection();
+        pstmt = connect.prepareStatement(sql);
+        rs = pstmt.executeQuery("SELECT ekipman_cihaz from ekipmanlar");
+        while(rs.next()){
+            cihazList.addAll(rs.getString("ekipman_cihaz"));
+        }
+        return cihazList;
+    }
+    public static Ekipman getOtherCihazInformation(String cihazAd){
+        Ekipman ek = null;
+        try {
+            String query = "SELECT * from ekipmanlar WHERE ekipman_cihaz= ?";
+            connect = db.getConnection();
+            pstmt = connect.prepareStatement(query);
+            pstmt.setString(1, cihazAd);
+            rs = pstmt.executeQuery();
+            System.out.println("calisiyo mu ");
+            while(rs.next()){
+                System.out.println("calisiyo mu2");
+                ek = new Ekipman(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return ek;
+    }
+    
+    public static ObservableList<Calisanlar> choiceCalisan(){
 	ObservableList<Calisanlar> list = FXCollections.observableArrayList();
         String query = "SELECT * from calisanlar";
 	try {
@@ -167,7 +199,27 @@ public class DataAccessObject {
 		
 	return list;
 	}
+    public static String getSeviye(String ad, String soyad){  
         
+        String l = null;
+        
+        try {
+            String query = "SELECT calisan_seviye from calisanlar WHERE (calisan_ad,calisan_soyad) =(?,?)";
+            connect = db.getConnection();
+            pstmt = connect.prepareStatement(query);
+            pstmt.setString(1, ad);
+            pstmt.setString(2, soyad);
+            rs = pstmt.executeQuery();
+            System.out.println("devamkee");
+            while(rs.next()){
+                System.out.println("devamke22");
+               l = (rs.getString("calisan_seviye"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return l;
+    }        
     
     
 

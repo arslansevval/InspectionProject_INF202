@@ -19,12 +19,21 @@ public class Calisanlar {
 	this.cID = new SimpleStringProperty(cID);
     }
 
-    public Calisanlar(String cFirstname, String cLastname) {
+    public Calisanlar(String cFirstname, String cLastname, String cSeviye) {
         this.cFirstname = new SimpleStringProperty(cFirstname);
         this.cLastname = new SimpleStringProperty(cLastname);
+        this.cSeviye = new SimpleStringProperty(cSeviye);
     }
- 
-    
+    public Calisanlar(String cFirstname, String cLastname ) {
+        this.cFirstname = new SimpleStringProperty(cFirstname);
+        this.cLastname = new SimpleStringProperty(cLastname);
+    }    
+
+    public Calisanlar(String cSeviye ) {
+        this.cSeviye = new SimpleStringProperty(cSeviye);
+    }
+
+    @Override
     public String toString(){
         return this.getcFirstname().getValue() + " " + this.getcLastname().getValue();
     }

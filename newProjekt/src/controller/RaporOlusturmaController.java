@@ -12,6 +12,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,9 +42,14 @@ public class RaporOlusturmaController implements Initializable {
     @FXML
     private Button yeniRapor;
     
-    static Calisanlar secilen;
+    
+    static String a,b;
+    static Calisanlar secilen11;
     static Calisanlar secilen2;
     static Calisanlar secilen3;
+    static String secilenOpSeviye;
+    static String secilenDeSeviye;
+    static String secilenOnSeviye;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        
@@ -69,12 +76,7 @@ public class RaporOlusturmaController implements Initializable {
         }
         if(event.getSource()== yeniRapor){
             try {
-                secilen = operator_box.getSelectionModel().getSelectedItem();
-                System.out.println(secilen);
-                secilen2 = degerlendiren_box.getSelectionModel().getSelectedItem();
-                System.out.println(secilen2);
-                secilen3 = onay_box.getSelectionModel().getSelectedItem();
-                System.out.println(secilen3);
+                secilenCalisan();
                 System.out.println("farkli1");
                 Node node=(Node) event.getSource();
                 Stage stage=(Stage) node.getScene().getWindow();
@@ -91,7 +93,36 @@ public class RaporOlusturmaController implements Initializable {
             }
         }
     }
-
+    public void secilenCalisan(){
+        secilen11 = operator_box.getSelectionModel().getSelectedItem();
+        System.out.println(secilen11);
+               
+        a = String.valueOf(secilen11.getcFirstname().get());
+        System.out.println(a);
+                
+        b = String.valueOf(secilen11.getcLastname().get());
+        System.out.println(b);
+        DataAccessObject d = new DataAccessObject();
+        secilenOpSeviye=DataAccessObject.getSeviye(a,b);
+        System.out.println("hadibakim3");
+        secilen2 = degerlendiren_box.getSelectionModel().getSelectedItem();
+        System.out.println(secilen2);
+        
+        a = String.valueOf(secilen2.getcFirstname().get());
+        System.out.println(a);        
+        b = String.valueOf(secilen2.getcLastname().get());
+        System.out.println(b);    
+        secilenDeSeviye=DataAccessObject.getSeviye(a,b);
+        secilen3 = onay_box.getSelectionModel().getSelectedItem();
+        System.out.println(secilen3);
+        
+        a = String.valueOf(secilen2.getcFirstname().get());
+        System.out.println(a);        
+        b = String.valueOf(secilen2.getcLastname().get());
+        System.out.println(b);    
+        secilenOnSeviye=DataAccessObject.getSeviye(a,b);
+        
+    }
     DataAccessObject da = new DataAccessObject();
     @FXML
     private void operatorSetOnClicked(MouseEvent event) {

@@ -288,12 +288,30 @@
                   </VBox>
                   <VBox layoutX="11.0" layoutY="11.0" prefHeight="146.0" prefWidth="147.0" style="-fx-border-color: #000000;">
                      <children>
-                        <VBox prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
-                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
-                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
-                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
-                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
-                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                        <VBox prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_kutupMesafesi" prefHeight="33.0" prefWidth="143.0" />
+                           </children></VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <ChoiceBox fx:id="cihaz_box" prefHeight="33.0" prefWidth="143.0" />
+                           </children></VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_mpTasiyiciOrtam" prefHeight="36.0" prefWidth="143.0" />
+                           </children></VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_miknatislamaTeknigi" prefHeight="42.0" prefWidth="143.0" />
+                           </children></VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_uvİsikSiddeti" prefHeight="37.0" prefWidth="143.0" />
+                           </children></VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_isikMesafesi" prefHeight="38.0" prefWidth="143.0" />
+                           </children></VBox>
                      </children>
                   </VBox>
                   <VBox layoutX="215.0" layoutY="11.0" prefHeight="146.0" prefWidth="143.0" style="-fx-border-color: #000000;">
@@ -989,7 +1007,10 @@
                            <children>
                               <TextField fx:id="txtfield_opAdSoyad" prefHeight="30.0" prefWidth="173.0" />
                            </children></VBox>
-                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_opSeviye" prefHeight="34.0" prefWidth="173.0" />
+                           </children></VBox>
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="36.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="67.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
                      </children>
@@ -1005,7 +1026,10 @@
                            <children>
                               <TextField fx:id="txtfield_deAdSoyad" prefHeight="30.0" prefWidth="160.0" />
                            </children></VBox>
-                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_deSeviye" prefHeight="35.0" prefWidth="160.0" />
+                           </children></VBox>
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="68.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
                      </children>
@@ -1021,7 +1045,10 @@
                            <children>
                               <TextField fx:id="txtfield_onAdSoyad" prefHeight="32.0" prefWidth="158.0" />
                            </children></VBox>
-                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_onSeviye" prefHeight="43.0" prefWidth="158.0" />
+                           </children></VBox>
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="69.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
                      </children>
@@ -1034,7 +1061,10 @@
                            </children>
                         </VBox>
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
-                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField prefHeight="33.0" prefWidth="196.0" />
+                           </children></VBox>
                         <VBox layoutX="11.0" layoutY="81.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
                         <VBox layoutX="11.0" layoutY="116.0" prefHeight="68.0" prefWidth="107.0" style="-fx-border-color: #000000;" />
                      </children>
