@@ -6,12 +6,13 @@ import javafx.beans.property.StringProperty;
 
 
 public class Ekipman {
-    private final StringProperty cihaz;
-    private final StringProperty kutupMesafesi;
-    private final StringProperty mpTasiyiciOrtam;
-    private final StringProperty miknatislamaTeknigi;
-    private final StringProperty uvİsikSiddeti;
-    private final StringProperty isikMesafesi;
+    
+    private StringProperty cihaz;
+    private StringProperty kutupMesafesi;
+    private StringProperty mpTasiyiciOrtam;
+    private StringProperty miknatislamaTeknigi;
+    private StringProperty uvİsikSiddeti;
+    private StringProperty isikMesafesi;
     
     public Ekipman(String cihaz, String kutupMesafesi, String mpTasiyiciOrtam,String miknatislamaTeknigi,String uvİsikSiddeti,String isikMesafesi){
         this.cihaz = new SimpleStringProperty(cihaz);
@@ -21,7 +22,10 @@ public class Ekipman {
         this.uvİsikSiddeti = new SimpleStringProperty(uvİsikSiddeti);
         this.isikMesafesi = new SimpleStringProperty(isikMesafesi);
     }
-
+    public Ekipman(String cihaz, String kutupmesafesi){
+        this.cihaz = new SimpleStringProperty(cihaz);
+        this.kutupMesafesi = new SimpleStringProperty(kutupmesafesi);
+    }
     /**
      * @return the cihaz
      */

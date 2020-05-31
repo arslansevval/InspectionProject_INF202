@@ -7,16 +7,26 @@ import javafx.beans.property.StringProperty;
 
 public class Calisanlar {
     
-    private final StringProperty cFirstname;
-    private final StringProperty cLastname;
-    private final StringProperty cSeviye;
-    private final StringProperty cID;
+    private StringProperty cFirstname;
+    private StringProperty cLastname;
+    private StringProperty cSeviye;
+    private StringProperty cID;
 	
-    public Calisanlar(String cID, String pFirstname, String pLastname, String pSeviye ) {
-        this.cFirstname = new SimpleStringProperty(pFirstname);
-	this.cLastname = new SimpleStringProperty(pLastname);
-	this.cSeviye = new SimpleStringProperty(pSeviye);
+    public Calisanlar(String cID, String cFirstname, String cLastname, String cSeviye ) {
+        this.cFirstname = new SimpleStringProperty(cFirstname);
+	this.cLastname = new SimpleStringProperty(cLastname);
+	this.cSeviye = new SimpleStringProperty(cSeviye);
 	this.cID = new SimpleStringProperty(cID);
+    }
+
+    public Calisanlar(String cFirstname, String cLastname) {
+        this.cFirstname = new SimpleStringProperty(cFirstname);
+        this.cLastname = new SimpleStringProperty(cLastname);
+    }
+ 
+    
+    public String toString(){
+        return this.getcFirstname().getValue() + " " + this.getcLastname().getValue();
     }
 	
     public StringProperty getcFirstname() {

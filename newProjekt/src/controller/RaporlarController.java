@@ -18,6 +18,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TextField;
+import newprojekt.Calisanlar;
 
 
 public class RaporlarController implements Initializable {
@@ -39,33 +41,46 @@ public class RaporlarController implements Initializable {
     private Text text_customer;
     @FXML
     private Button exportToXLS;
+    @FXML
+    private TextField txtfield_opAdSoyad;
+    @FXML
+    private TextField txtfield_deAdSoyad;
+    @FXML
+    private TextField txtfield_onAdSoyad;
     
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ExportToExcel ex = new ExportToExcel();
+       
+        this.txtfield_opAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen));
+        this.txtfield_deAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen2));
+        this.txtfield_onAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen3));
+        
         try {
-            //database db = new database();
-            //db.getConnection();
-            
-            DataAccessObject dao = new DataAccessObject();
-            String sql = "SELECT musteri_ad from musteriler ";
-            musteri_box.getItems().addAll(dao.showMusteri(sql));
-
+            ExportToExcel ex = new ExportToExcel();
+            loadMusteri();
+            exportToXLS.setOnAction(e->{
+                String musteriAd = musteri_box.getValue();
+                String opAd = txtfield_opAdSoyad.getText();
+                String deAd = txtfield_deAdSoyad.getText();
+                String onAd = txtfield_onAdSoyad.getText();
+                try {
+                    ex.excel(musteriAd, opAd, deAd, onAd);
+                } catch (IOException ex1) {
+                    Logger.getLogger(RaporlarController.class.getName()).log(Level.SEVERE, null, ex1);
+                }
+            });
         } catch (SQLException ex1) {
             Logger.getLogger(RaporlarController.class.getName()).log(Level.SEVERE, null, ex1);
         }
-        exportToXLS.setOnAction(e->{
-            String musteriAd = musteri_box.getValue();
-            try {
-                ex.excel(musteriAd);
-            } catch (IOException ex1) {
-                Logger.getLogger(RaporlarController.class.getName()).log(Level.SEVERE, null, ex1);
-            }
-        });
 
-    }    
+    }
+    public void loadMusteri() throws SQLException{
+        DataAccessObject dao = new DataAccessObject();
+        String sql = "SELECT musteri_ad from musteriler ";
+        musteri_box.getItems().addAll(dao.showMusteri(sql));
+    }
 
 
 

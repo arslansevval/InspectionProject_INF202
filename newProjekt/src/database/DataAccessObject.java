@@ -8,13 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
 import newprojekt.Calisanlar;
-import static database.database.ps;
+import newprojekt.Ekipman;
 import newprojekt.Musteri;
 
 
@@ -135,6 +132,43 @@ public class DataAccessObject {
         }
         return musteriList;
     }
+    
+    public static ObservableList<Ekipman> getEkipmanData(String query){
+	ObservableList list = FXCollections.observableArrayList();
+	try {
+            connect = db.getConnection();
+            pstmt = connect.prepareStatement(query);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+		list.add(new Ekipman(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
+            }
+	}
+        catch(Exception e) {
+            e.printStackTrace();
+	}
+		
+	return list;
+    }
+     public ObservableList<Calisanlar> choiceCalisan(){
+	ObservableList<Calisanlar> list = FXCollections.observableArrayList();
+        String query = "SELECT * from calisanlar";
+	try {
+            connect = db.getConnection();
+            pstmt = connect.prepareStatement(query);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                Calisanlar c = new Calisanlar(rs.getString(2), rs.getString(3));
+                list.addAll(c);
+            }
+	}
+        catch(Exception e) {
+            e.printStackTrace();
+	}
+		
+	return list;
+	}
+        
+    
     
 
 

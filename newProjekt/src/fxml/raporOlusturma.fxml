@@ -2,26 +2,46 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="594.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RaporOlusturmaController">
+<AnchorPane id="AnchorPane" prefHeight="509.0" prefWidth="555.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RaporOlusturmaController">
    <children>
-      <VBox prefHeight="718.0" prefWidth="125.0" spacing="5.0" style="-fx-background-color: #596275;">
+      <AnchorPane prefHeight="509.0" prefWidth="555.0" style="-fx-background-color: #596275;">
          <children>
-            <HBox prefHeight="51.0" prefWidth="125.0">
+            <VBox layoutX="166.0" layoutY="161.0" prefHeight="188.0" prefWidth="190.0" spacing="10.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Personel bilgilerini giriniz:" wrappingWidth="190.13671875">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="operator_box" onMouseClicked="#operatorSetOnClicked" prefHeight="25.0" prefWidth="190.0" promptText="Operatör" />
+                  <ComboBox fx:id="degerlendiren_box" onMouseClicked="#degerlendirenSetOnClicked" prefHeight="25.0" prefWidth="192.0" promptText="Değerlendiren" />
+                  <ComboBox fx:id="onay_box" onMouseClicked="#onaySetOnClicked" prefHeight="25.0" prefWidth="191.0" promptText="Onay" />
+                  <HBox prefHeight="36.0" prefWidth="200.0">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <children>
+                        <Button fx:id="yeniRapor" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="74.0" style="-fx-background-color: #EA2027;" text="Yeni Rapor" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox layoutX="14.0" layoutY="8.0" prefHeight="51.0" prefWidth="103.0">
                <children>
                   <Button fx:id="geri" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="82.0" prefWidth="60.0" style="-fx-background-color: #EA2027;">
                      <graphic>
-                        <ImageView fitHeight="49.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="33.0">
                            <image>
-                              <Image url="@image/icon/back.png" />
+                              <Image url="@icon/back.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -35,99 +55,8 @@
                      </HBox.margin>
                   </Text>
                </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="52.0" prefWidth="131.0">
-               <children>
-                  <Button fx:id="yenirapor" mnemonicParsing="false" onMouseClicked="#show_yenirapor" prefHeight="54.0" prefWidth="57.0" style="-fx-background-color: #EA2027;">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <graphic>
-                        <ImageView fitHeight="42.0" fitWidth="42.0">
-                           <image>
-                              <Image url="@image/icon/contract.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yeni Rapor" textAlignment="CENTER" wrappingWidth="62.13671875">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-               </children>
-               <padding>
-                  <Insets top="2.0" />
-               </padding>
-            </HBox>
-            <HBox prefHeight="52.0" prefWidth="131.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="52.0" style="-fx-background-color: #EA2027;">
-                     <graphic>
-                        <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/icon/report%20(1).png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Raporlar" textAlignment="CENTER" wrappingWidth="66.13671875">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
-                  </Text>
-               </children>
-            </HBox>
-            <HBox prefHeight="52.0" prefWidth="131.0" spacing="5.0">
-               <children>
-                  <Button fx:id="exportToXLS" mnemonicParsing="false" prefHeight="54.0" prefWidth="52.0" style="-fx-background-color: #EA2027;">
-                     <graphic>
-                        <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/icon/xls.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Excel">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
-                  </Text>
-               </children>
-            </HBox>
-            <HBox prefHeight="52.0" prefWidth="131.0" spacing="5.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="52.0" style="-fx-background-color: #EA2027;">
-                     <graphic>
-                        <ImageView fitHeight="42.0" fitWidth="42.0">
-                           <image>
-                              <Image url="@image/icon/pdf.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pdf" wrappingWidth="59.390625">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
-                  </Text>
-               </children>
             </HBox>
          </children>
-      </VBox>
-      <BorderPane fx:id="border" layoutX="125.0" prefHeight="718.0" prefWidth="1311.0" style="-fx-background-color: #596275;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="0.0" />
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 
 import javafx.stage.Stage;
 
@@ -32,10 +33,8 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private Button calisanlar;
-
-  
     @FXML
-    private Button raporlar;
+    private Button Raporlar;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -48,32 +47,32 @@ public class FXMLDocumentController implements Initializable {
         
         if(event.getSource()== calisanlar){
             
-                System.out.println("deneme3");
-                Node node=(Node) event.getSource();
-                Stage stage=(Stage) node.getScene().getWindow();
-                stage.close();
-                System.out.println("deneme1");
-                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/fxml/Calisanlar.fxml")));
-                System.out.println("deneme2");
-                stage.setScene(scene);
-                stage.show();
+            System.out.println("deneme3");
+            Node node=(Node) event.getSource();
+            Stage stage=(Stage) node.getScene().getWindow();
+            stage.close();
+            System.out.println("deneme1");
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/fxml/Calisanlar.fxml")));
+            System.out.println("deneme2");
+            stage.setScene(scene);
+            stage.show();
         }
-        
-                if(event.getSource()== raporlar){
+        if(event.getSource()== Raporlar){
                     
-                System.out.println("deneme1");
-                Node node=(Node) event.getSource();
-                Stage stage=(Stage) node.getScene().getWindow();
-                stage.close();
-                System.out.println("deneme2");
-                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/fxml/raporOlusturma.fxml")));
-                System.out.println("deneme3");
-                stage.setScene(scene);
-                stage.show();
+            System.out.println("deneme1");
+            Node node=(Node) event.getSource();
+            Stage stage=(Stage) node.getScene().getWindow();
+            stage.close();
+            System.out.println("deneme2");
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/fxml/raporOlusturma.fxml")));
+            System.out.println("deneme3");
+            stage.setScene(scene);
+            stage.show();
         } 
         
         
     }
+
 
    
 

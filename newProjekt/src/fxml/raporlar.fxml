@@ -985,7 +985,10 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Operatör/ Operator" />
                            </children>
                         </VBox>
-                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_opAdSoyad" prefHeight="30.0" prefWidth="173.0" />
+                           </children></VBox>
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="36.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="67.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
@@ -998,7 +1001,10 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Değerlendiren/ Evaluated by" />
                            </children>
                         </VBox>
-                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_deAdSoyad" prefHeight="30.0" prefWidth="160.0" />
+                           </children></VBox>
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="68.0" prefWidth="146.0" style="-fx-border-color: #000000;" />
@@ -1011,7 +1017,10 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Onay/ Confirmation " />
                            </children>
                         </VBox>
-                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
+                        <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;">
+                           <children>
+                              <TextField fx:id="txtfield_onAdSoyad" prefHeight="32.0" prefWidth="158.0" />
+                           </children></VBox>
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
                         <VBox layoutX="11.0" layoutY="11.0" prefHeight="69.0" prefWidth="109.0" style="-fx-border-color: #000000;" />
@@ -1034,7 +1043,7 @@
             </HBox>
             <HBox layoutX="51.0" layoutY="1486.0" prefHeight="64.0" prefWidth="553.0">
                <children>
-                  <Button fx:id="exportToXLS" mnemonicParsing="false"  prefHeight="64.0" prefWidth="52.0" text="excel" />
+                  <Button fx:id="exportToXLS" mnemonicParsing="false" prefHeight="64.0" prefWidth="52.0" text="excel" />
                   <Button mnemonicParsing="false" prefHeight="83.0" prefWidth="52.0" text="pdf" />
                   <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="74.0" text="Kaydet" />
                </children>
