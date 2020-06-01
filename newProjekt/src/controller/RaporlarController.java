@@ -14,13 +14,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.text.Text;
 import export.ExportToExcel;
+import export.ExportToPDF;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import newprojekt.Calisanlar;
 import newprojekt.Ekipman;
 
@@ -70,51 +75,66 @@ public class RaporlarController implements Initializable {
     private TextField txtfield_deSeviye;
     @FXML
     private TextField txtfield_onSeviye;
+    @FXML
+    private Button exportToPDF;
+    @FXML
+    private AnchorPane anchorPane;
+    @FXML
+    private ScrollPane scrollPane;
+    
+  
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        
-        this.txtfield_opAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen11));
-        this.txtfield_deAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen2));
-        this.txtfield_onAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen3));
-        
-        
-        this.txtfield_opSeviye.setText(RaporOlusturmaController.secilenOpSeviye);
-        this.txtfield_deSeviye.setText(RaporOlusturmaController.secilenDeSeviye);
-        this.txtfield_onSeviye.setText(RaporOlusturmaController.secilenOnSeviye);
-        
-        cihaz_box.setOnAction(e->{
-        loadOtherCihazInformation();
-               
-        });
-
-        
         try {
+            this.txtfield_opAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen11));
+            this.txtfield_deAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen2));
+            this.txtfield_onAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen3));
+            
+            this.txtfield_opSeviye.setText(RaporOlusturmaController.secilenOpSeviye);
+            this.txtfield_deSeviye.setText(RaporOlusturmaController.secilenDeSeviye);
+            this.txtfield_onSeviye.setText(RaporOlusturmaController.secilenOnSeviye);
+            
+            cihaz_box.setOnAction(e->{
+                loadOtherCihazInformation();
+                
+            });
             ExportToExcel ex = new ExportToExcel();
-            loadMusteri();
+            ExportToPDF pd = new ExportToPDF();
+            
+            loadMusteri();           
             loadCihaz();
-            
-            
-
             exportToXLS.setOnAction(e->{
-                String musteriAd = musteri_box.getValue();
-                String cihazAd = cihaz_box.getValue();
-                String kutupMesafesi = txtfield_kutupMesafesi.getText();
-                String opAd = txtfield_opAdSoyad.getText();
-                String deAd = txtfield_deAdSoyad.getText();
-                String onAd = txtfield_onAdSoyad.getText();
-                String opSeviye = txtfield_opSeviye.getText();
-                String deSeviye = txtfield_deSeviye.getText();
-                String onSeviye = txtfield_onSeviye.getText();
+                
                 try {
-                    ex.excel(musteriAd, cihazAd, kutupMesafesi, opAd, deAd, onAd, opSeviye, deSeviye, onSeviye );
+                    String musteriAd = musteri_box.getValue();
+                    String cihazAd = cihaz_box.getValue();
+                    String kutupMesafesi = txtfield_kutupMesafesi.getText();
+                    String opAd = txtfield_opAdSoyad.getText();
+                    String deAd = txtfield_deAdSoyad.getText();
+                    String onAd = txtfield_onAdSoyad.getText();
+                    String opSeviye = txtfield_opSeviye.getText();
+                    String deSeviye = txtfield_deSeviye.getText();
+                    String onSeviye = txtfield_onSeviye.getText();
+                    ex.excel(musteriAd, cihazAd, kutupMesafesi, opAd, deAd, onAd, opSeviye, deSeviye, onSeviye);
                 } catch (IOException ex1) {
                     Logger.getLogger(RaporlarController.class.getName()).log(Level.SEVERE, null, ex1);
                 }
+                
+            });
+            
+
+            //Stage primaryStage = new Stage();
+            exportToPDF.setOnAction(e->{
+                
+                pd.pdf(anchorPane);
             });
         } catch (SQLException ex1) {
             Logger.getLogger(RaporlarController.class.getName()).log(Level.SEVERE, null, ex1);
         }
+   
+
 
     }
     public void loadMusteri() throws SQLException{
@@ -129,7 +149,7 @@ public class RaporlarController implements Initializable {
 
     }
 
-    private void loadOtherCihazInformation() {
+    private void loadOtherCihazInformation(){
         System.out.println("yeter be bastır");
         str = cihaz_box.getSelectionModel().getSelectedItem();
         System.out.println(str);
