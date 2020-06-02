@@ -116,9 +116,9 @@ public class RaporOlusturmaController implements Initializable {
         secilen3 = onay_box.getSelectionModel().getSelectedItem();
         System.out.println(secilen3);
         
-        a = String.valueOf(secilen2.getcFirstname().get());
+        a = String.valueOf(secilen3.getcFirstname().get());
         System.out.println(a);        
-        b = String.valueOf(secilen2.getcLastname().get());
+        b = String.valueOf(secilen3.getcLastname().get());
         System.out.println(b);    
         secilenOnSeviye=DataAccessObject.getSeviye(a,b);
         
