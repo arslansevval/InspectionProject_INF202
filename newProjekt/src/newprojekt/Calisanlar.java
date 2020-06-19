@@ -33,6 +33,7 @@ public class Calisanlar {
         this.cSeviye = new SimpleStringProperty(cSeviye);
     }
 
+
     @Override
     public String toString(){
         return this.getcFirstname().getValue() + " " + this.getcLastname().getValue();
@@ -52,5 +53,34 @@ public class Calisanlar {
     }
     public StringProperty getcID() {
 	return cID;
+    }
+
+    /**
+     * @param cFirstname the cFirstname to set
+     */
+    public void setcFirstname(StringProperty cFirstname) {
+        this.cFirstname = cFirstname;
+    }
+
+    /**
+     * @param cLastname the cLastname to set
+     */
+    public void setcLastname(StringProperty cLastname) {
+        this.cLastname = cLastname;
+    }
+
+    /**
+     * @param cSeviye the cSeviye to set
+     */
+    public void setcSeviye(StringProperty cSeviye) {
+        this.cSeviye = cSeviye;
+        
+    }
+
+    /**
+     * @param cID the cID to set
+     */
+    public void setcID(StringProperty cID) {
+        this.cID = cID;
     }
 }

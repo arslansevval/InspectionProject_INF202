@@ -23,6 +23,14 @@ public class DataAccessObject {
     private static Connection connect;
     public static CalisanlarController ca = new CalisanlarController();
 
+    public static String getSeviye(String secilen11) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static void printf(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
     public String query,name,nachname,seviye,id;
     private boolean EDIT=false, ADD=true;
@@ -124,6 +132,19 @@ public class DataAccessObject {
 		
 	return list;
 	}
+    public String sqlMusteriAd() throws SQLException{
+        String sql = "SELECT musteri_ad from musteriler ";
+        return sql;
+    }
+    public String sqlrefresh() throws SQLException{
+        String query = "SELECT * from calisanlar ";
+        return query;
+    }
+    public String sqlEkipmanCihaz() throws SQLException{
+        String query = "SELECT ekipman_cihaz from ekipmanlar";
+        return query;
+    }
+    
     public ObservableList<String> showMusteri(String sql) throws SQLException {
         ObservableList<String> musteriList = FXCollections.observableArrayList();
         connect = db.getConnection();
@@ -134,6 +155,7 @@ public class DataAccessObject {
         }
         return musteriList;
     }
+    
     
     public static ObservableList<Ekipman> getEkipmanData(String query){
 	ObservableList list = FXCollections.observableArrayList();

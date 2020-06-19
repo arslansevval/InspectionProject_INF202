@@ -79,14 +79,15 @@ public class RaporlarController implements Initializable {
     private Button exportToPDF;
     @FXML
     private AnchorPane anchorPane;
+
     @FXML
-    private ScrollPane scrollPane;
-    
-  
+    private TextField raporNo;
+    public int raporNumarasi = 1000;
+    DataAccessObject dao = new DataAccessObject();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+      
         try {
             this.txtfield_opAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen11));
             this.txtfield_deAdSoyad.setText(String.valueOf(RaporOlusturmaController.secilen2));
@@ -95,7 +96,7 @@ public class RaporlarController implements Initializable {
             this.txtfield_opSeviye.setText(RaporOlusturmaController.secilenOpSeviye);
             this.txtfield_deSeviye.setText(RaporOlusturmaController.secilenDeSeviye);
             this.txtfield_onSeviye.setText(RaporOlusturmaController.secilenOnSeviye);
-            
+            this.raporNo.setText(String.valueOf(raporNumarasi));
             cihaz_box.setOnAction(e->{
                 loadOtherCihazInformation();
                 
@@ -117,7 +118,12 @@ public class RaporlarController implements Initializable {
                     String opSeviye = txtfield_opSeviye.getText();
                     String deSeviye = txtfield_deSeviye.getText();
                     String onSeviye = txtfield_onSeviye.getText();
-                    ex.excel(musteriAd, cihazAd, kutupMesafesi, opAd, deAd, onAd, opSeviye, deSeviye, onSeviye);
+               
+                    
+                    String rapor = String.valueOf(raporNumarasi);
+                    ++raporNumarasi;
+                    this.raporNo.setText(String.valueOf(raporNumarasi));
+                    ex.excel(musteriAd, cihazAd, kutupMesafesi, opAd, deAd, onAd, opSeviye, deSeviye, onSeviye, rapor);
                 } catch (IOException ex1) {
                     Logger.getLogger(RaporlarController.class.getName()).log(Level.SEVERE, null, ex1);
                 }
@@ -139,18 +145,17 @@ public class RaporlarController implements Initializable {
     }
     public void loadMusteri() throws SQLException{
         DataAccessObject dao = new DataAccessObject();
-        String sql = "SELECT musteri_ad from musteriler ";
+        String sql = dao.sqlMusteriAd();
         musteri_box.getItems().addAll(dao.showMusteri(sql));
-    }
+    } 
     public void loadCihaz() throws SQLException{
         DataAccessObject dao = new DataAccessObject();
-        String sql = "SELECT ekipman_cihaz from ekipmanlar";
+        String sql = dao.sqlEkipmanCihaz();
         cihaz_box.getItems().addAll(dao.showCihaz(sql));
 
     }
 
     private void loadOtherCihazInformation(){
-        System.out.println("yeter be bastır");
         str = cihaz_box.getSelectionModel().getSelectedItem();
         System.out.println(str);
         Ekipman a = DataAccessObject.getOtherCihazInformation(str);

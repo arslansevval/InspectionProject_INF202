@@ -29,6 +29,7 @@ import javafx.stage.Stage;
 import newprojekt.Calisanlar;
 import database.DataAccessObject;
 import database.database;
+import java.sql.SQLException;
 
 
 /**
@@ -89,49 +90,71 @@ public class CalisanlarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        DataAccessObject dao = new DataAccessObject();
-        db.getConnection();
-        loadData();
+        try {
+            DataAccessObject dao = new DataAccessObject();
+            db.getConnection();
+            loadData();
+            
+            
+            
+            ekle_btt.setOnAction(e->{
+                try {
+                    String i = txtfield_id.getText();
+                    String na = txtfield_ad.getText();
+                    String nach = txtfield_soyad.getText();
+                    String sevi = combo_box.getValue();
+                    dao.insertCalisan(i, na, nach, sevi);
+                    refreshTable();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CalisanlarController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            });
+            
+            
+            
+            sil_btt.setOnAction(e->{
+                try {
+                    Calisanlar selected = calisan_table.getSelectionModel().getSelectedItem();
+                    id = selected.getcID().get();
+                    dao.deleteCalisan(id);
+                    refreshTable();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CalisanlarController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                
+            });
+            btt_duzenle.setOnAction(e->{
+                try {
+                    ADD = false;
+                    EDIT = true;
+                    editAccount();
+                    refreshTable();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CalisanlarController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            });
+            
+            btt_kaydet.setOnAction(e->{
+            
+                try {
+                    id= txtfield_id.getText();
+                    name = txtfield_ad.getText();
+                    nachname = txtfield_soyad.getText();
+                    seviye = combo_box.getValue();
+                    dao.updateCalisan(id, name, nachname, seviye);
+                    refreshTable();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CalisanlarController.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
-
-
-	ekle_btt.setOnAction(e->{
-            String i = txtfield_id.getText();
-            String na = txtfield_ad.getText();
-            String nach = txtfield_soyad.getText();
-            String sevi = combo_box.getValue();
-            dao.insertCalisan(i, na, nach, sevi);
+            });
+            
+            initTable();
             refreshTable();
-	});
-
-
-
-        sil_btt.setOnAction(e->{
-            Calisanlar selected = calisan_table.getSelectionModel().getSelectedItem();
-            id = selected.getcID().get();
-            dao.deleteCalisan(id);
-            refreshTable();
-   
-
-        });
-        btt_duzenle.setOnAction(e->{
-            ADD = false;
-            EDIT = true;
-            editAccount();
-            refreshTable();
-        });
-        
-	btt_kaydet.setOnAction(e->{
-            id= txtfield_id.getText();
-            name = txtfield_ad.getText();
-            nachname = txtfield_soyad.getText();
-            seviye = combo_box.getValue();            
-            dao.updateCalisan(id, name, nachname, seviye);
-            refreshTable();
-	});
-        
-        initTable();
-        refreshTable();
+        } catch (SQLException ex) {
+            Logger.getLogger(CalisanlarController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
 
         
@@ -154,9 +177,9 @@ public class CalisanlarController implements Initializable {
     }
 	
     
-    public void refreshTable() {
+    public void refreshTable() throws SQLException {
 	initTable();
-	query = "SELECT * from calisanlar ";
+	query =dao.sqlrefresh();
 	calisan_table.setItems(dao.getCalisanData(query));
 		
     } 

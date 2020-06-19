@@ -5,6 +5,7 @@
  */
 package controller;
 
+
 import controller.FXMLDocumentController;
 import database.DataAccessObject;
 import java.io.IOException;
@@ -12,8 +13,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +22,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import newprojekt.Calisanlar;
 
@@ -102,7 +100,8 @@ public class RaporOlusturmaController implements Initializable {
                 
         b = String.valueOf(secilen11.getcLastname().get());
         System.out.println(b);
-        DataAccessObject d = new DataAccessObject();
+      
+        
         secilenOpSeviye=DataAccessObject.getSeviye(a,b);
         System.out.println("hadibakim3");
         secilen2 = degerlendiren_box.getSelectionModel().getSelectedItem();
@@ -138,6 +137,9 @@ public class RaporOlusturmaController implements Initializable {
     private void onaySetOnClicked(MouseEvent event) {
         onay_box.setItems(da.choiceCalisan());
     }
+
+  
+    
 
   
     
