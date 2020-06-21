@@ -37,9 +37,9 @@
                <children>
                   <Button fx:id="geri" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="46.0" prefWidth="53.0" style="-fx-background-color: #EA2027;">
                      <graphic>
-                        <ImageView fitHeight="37.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="46.0" fitWidth="38.0">
                            <image>
-                              <Image url="@image/icon/back.png" />
+                              <Image url="@icon/back.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -72,7 +72,7 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <TableView fx:id="calisan_table" prefHeight="354.0" prefWidth="388.0" style="-fx-background-color: #EA2027;">
+                  <TableView fx:id="calisan_table" prefHeight="354.0" prefWidth="388.0" style="-fx-background-color: #dcdde1;">
                     <columns>
                         <TableColumn fx:id="calisan_id" prefWidth="75.0" text="Id" />
                       <TableColumn fx:id="calisan_seviye" prefWidth="75.0" text="Seviye" />

@@ -121,7 +121,7 @@ public class RaporlarController implements Initializable {
                
                     
                     String rapor = String.valueOf(raporNumarasi);
-                    ++raporNumarasi;
+                    raporNumarasi++;
                     this.raporNo.setText(String.valueOf(raporNumarasi));
                     ex.excel(musteriAd, cihazAd, kutupMesafesi, opAd, deAd, onAd, opSeviye, deSeviye, onSeviye, rapor);
                 } catch (IOException ex1) {
@@ -133,7 +133,6 @@ public class RaporlarController implements Initializable {
 
             //Stage primaryStage = new Stage();
             exportToPDF.setOnAction(e->{
-                
                 pd.pdf(anchorPane);
             });
         } catch (SQLException ex1) {

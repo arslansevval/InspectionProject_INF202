@@ -7,7 +7,6 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,14 +28,9 @@ import javafx.stage.Stage;
 import newprojekt.Calisanlar;
 import database.DataAccessObject;
 import database.database;
-import java.sql.SQLException;
 
 
-/**
- * FXML Controller class
- *
- * @author arsla
- */
+
 public class CalisanlarController implements Initializable {
 
 
@@ -53,14 +47,13 @@ public class CalisanlarController implements Initializable {
     public TableColumn<Calisanlar, String> calisan_soyad;
     
     @FXML
-     ComboBox<String> combo_box;
+    ComboBox<String> combo_box;
     ObservableList<String> seviyeList = FXCollections.observableArrayList();
     @FXML
     private Button ekle_btt;
     @FXML
     private Button sil_btt;
-    @FXML
-    private Button geri;
+ 
     
   
     
@@ -68,7 +61,6 @@ public class CalisanlarController implements Initializable {
     
     private database db;
     private DataAccessObject dao;
-    private Connection connect;
     private String query,id,name,nachname,seviye;
     private static boolean EDIT = false, ADD = true;
     public FXMLLoader loader;
@@ -78,11 +70,13 @@ public class CalisanlarController implements Initializable {
     @FXML
      TextField txtfield_ad;
     @FXML
-     TextField txtfield_soyad;
+    TextField txtfield_soyad;
     @FXML
     private Button btt_duzenle;
     @FXML
     private Button btt_kaydet;
+    @FXML
+    private Button geri;
     
    
  
@@ -90,71 +84,50 @@ public class CalisanlarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
+   
             DataAccessObject dao = new DataAccessObject();
             db.getConnection();
             loadData();
-            
-            
-            
             ekle_btt.setOnAction(e->{
-                try {
-                    String i = txtfield_id.getText();
-                    String na = txtfield_ad.getText();
-                    String nach = txtfield_soyad.getText();
-                    String sevi = combo_box.getValue();
-                    dao.insertCalisan(i, na, nach, sevi);
-                    refreshTable();
-                } catch (SQLException ex) {
-                    Logger.getLogger(CalisanlarController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+
+                String i = txtfield_id.getText();
+                String na = txtfield_ad.getText();
+                String nach = txtfield_soyad.getText();
+                String sevi = combo_box.getValue();
+                dao.insertCalisan(i, na, nach, sevi);
+                refreshTable();
+
             });
-            
-            
-            
             sil_btt.setOnAction(e->{
-                try {
-                    Calisanlar selected = calisan_table.getSelectionModel().getSelectedItem();
-                    id = selected.getcID().get();
-                    dao.deleteCalisan(id);
-                    refreshTable();
-                } catch (SQLException ex) {
-                    Logger.getLogger(CalisanlarController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+
+                Calisanlar selected = calisan_table.getSelectionModel().getSelectedItem();
+                id = selected.getcID().get();
+                dao.deleteCalisan(id);
+                refreshTable();
+
                 
                 
             });
             btt_duzenle.setOnAction(e->{
-                try {
-                    ADD = false;
-                    EDIT = true;
-                    editAccount();
-                    refreshTable();
-                } catch (SQLException ex) {
-                    Logger.getLogger(CalisanlarController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            });
-            
-            btt_kaydet.setOnAction(e->{
-            
-                try {
-                    id= txtfield_id.getText();
-                    name = txtfield_ad.getText();
-                    nachname = txtfield_soyad.getText();
-                    seviye = combo_box.getValue();
-                    dao.updateCalisan(id, name, nachname, seviye);
-                    refreshTable();
-                } catch (SQLException ex) {
-                    Logger.getLogger(CalisanlarController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+
+                ADD = false;
+                EDIT = true;
+                editAccount();
+                refreshTable();
 
             });
-            
+            btt_kaydet.setOnAction(e->{
+                id= txtfield_id.getText();
+                name = txtfield_ad.getText();
+                nachname = txtfield_soyad.getText();
+                seviye = combo_box.getValue();
+                dao.updateCalisan(id, name, nachname, seviye);
+                refreshTable();      
+            });
             initTable();
             refreshTable();
-        } catch (SQLException ex) {
-            Logger.getLogger(CalisanlarController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+
 
 
         
@@ -177,10 +150,10 @@ public class CalisanlarController implements Initializable {
     }
 	
     
-    public void refreshTable() throws SQLException {
+    private void refreshTable() {
 	initTable();
-	query =dao.sqlrefresh();
-	calisan_table.setItems(dao.getCalisanData(query));
+	query ="SELECT * from calisanlar ";
+	calisan_table.setItems(DataAccessObject.getCalisanData(query));
 		
     } 
     private void editAccount() {

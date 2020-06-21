@@ -16,28 +16,60 @@
          <children>
             <HBox layoutY="179.0" prefHeight="28.0" prefWidth="160.0">
                <children>
-                  <TextField prefHeight="25.0" prefWidth="131.0" promptText="Ara" style="-fx-background-color: #596275;" />
-                  <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                  <TextField prefHeight="15.0" prefWidth="131.0" promptText="Ara" style="-fx-background-color: #596275;" />
+                  <ImageView fitHeight="21.0" fitWidth="25.0">
                      <image>
-                        <Image url="@image/icon/research.png" />
+                        <Image url="@icon/research.png" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
-            <VBox layoutX="54.0" layoutY="224.0" prefHeight="247.0" prefWidth="117.0" spacing="10.0" style="-fx-background-color: #596275; -fx-background-radius: 10 10 10 10;">
+            <VBox layoutX="39.0" layoutY="224.0" prefHeight="247.0" prefWidth="132.0" spacing="10.0" style="-fx-background-color: #596275; -fx-background-radius: 10 10 10 10;">
                <children>
                   <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="139.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #EA2027;" text="Anasayfa" />
                   <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="134.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #EA2027;" text="Projeler" />
-                  <Button fx:id="calisanlar" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="142.0" style="-fx-background-color: #EA2027; -fx-background-radius: 40 40 40 40;" text="Çalışanlar">
+                  <Button fx:id="Calisanlar" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="142.0" style="-fx-background-color: #EA2027; -fx-background-radius: 40 40 40 40;" text="Çalışanlar">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font></Button>
                   <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="140.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #EA2027;" text="Müşteriler" />
                   <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="141.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #EA2027;" text="Ekipmanlar" />
-                  <Button fx:id="Raporlar" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="36.0" prefWidth="116.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #EA2027;" text="Raporlar" />
+                  <Button fx:id="Raporlar" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="36.0" prefWidth="133.0" style="-fx-background-radius: 40 40 40 40; -fx-background-color: #EA2027;" text="Raporlar" />
                </children>
             </VBox>
-            <VBox layoutY="224.0" prefHeight="246.0" prefWidth="52.0" spacing="5.0" style="-fx-background-color: #596275; -fx-background-radius: 10 10 10 10;" />
+            <VBox layoutY="224.0" prefHeight="246.0" prefWidth="36.0" spacing="5.0" style="-fx-background-color: #596275; -fx-background-radius: 10 10 10 10;">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="31.0">
+                     <image>
+                        <Image url="@icon/home.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="36.0">
+                     <image>
+                        <Image url="@icon/project.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@icon/employee.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@icon/customer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="34.0">
+                     <image>
+                        <Image url="@icon/project-management.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@icon/report%20(1).png" />
+                     </image>
+                  </ImageView>
+               </children></VBox>
             <HBox prefHeight="90.0" prefWidth="159.0">
                <children>
                   <ImageView fitHeight="162.0" fitWidth="171.0">

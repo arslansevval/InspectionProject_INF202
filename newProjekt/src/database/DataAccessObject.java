@@ -23,13 +23,7 @@ public class DataAccessObject {
     private static Connection connect;
     public static CalisanlarController ca = new CalisanlarController();
 
-    public static String getSeviye(String secilen11) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    private static void printf(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 
     public String query,name,nachname,seviye,id;
@@ -73,8 +67,6 @@ public class DataAccessObject {
 	
     public void deleteCalisan(String id) {
         try {
-            //Calisanlar selected = ca.calisan_table.getSelectionModel().getSelectedItem();
-            //id = selected.getcID();
             String query = "DELETE FROM calisanlar WHERE calisan_id="+id+"";
             ps=database.connect.prepareStatement(query);
             saveData(query);
@@ -136,10 +128,10 @@ public class DataAccessObject {
         String sql = "SELECT musteri_ad from musteriler ";
         return sql;
     }
-    public String sqlrefresh() throws SQLException{
+    /*public String sqlrefresh() throws SQLException{
         String query = "SELECT * from calisanlar ";
         return query;
-    }
+    }*/
     public String sqlEkipmanCihaz() throws SQLException{
         String query = "SELECT ekipman_cihaz from ekipmanlar";
         return query;
