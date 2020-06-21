@@ -1,13 +1,10 @@
-
+// Şevval Arslan 170503031
 package controller;
 
-import static controller.RaporOlusturmaController.secilen11;
 import database.DataAccessObject;
-import database.database;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -18,15 +15,8 @@ import export.ExportToPDF;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-import newprojekt.Calisanlar;
 import newprojekt.Ekipman;
 
 
